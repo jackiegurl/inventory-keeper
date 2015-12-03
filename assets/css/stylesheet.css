@@ -1,0 +1,8 @@
+@font-face {
+  font-family: avenir-light;
+  src: url(../fonts/avenir-light.woff)
+}
+
+body {
+  font-family: avenir-light;
+}
