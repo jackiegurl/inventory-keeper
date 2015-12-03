@@ -1,0 +1,9 @@
+# Project Prompt
+prompt.txt
+
+# Modules
+node_modules/
+bower_components/
+
+# Webpack
+*bundle.js
