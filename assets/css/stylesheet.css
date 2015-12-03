@@ -1,6 +1,11 @@
 @font-face {
+  font-family: didot;
+  src: url("../fonts/didot.ttc");
+}
+
+@font-face {
   font-family: avenir-light;
-  src: url(../fonts/avenir-light.woff)
+  src: url("../fonts/avenir-light.woff");
 }
 
 body {
