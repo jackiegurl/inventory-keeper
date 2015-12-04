@@ -112,3 +112,7 @@ button {
 #start-selling:hover {
   background: linear-gradient(-180deg, #67bf38 0, #3db94b 100%);
 }
+
+#signup-popup {
+  background-color: #000;
+}

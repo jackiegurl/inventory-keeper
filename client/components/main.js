@@ -12,12 +12,8 @@ var Main = React.createClass({
   },
 
   checkToken: function() {
-    var tokenGet = window.localStorage.getItem('token');
-    if(tokenGet) {
-      console.log('we have the token');
-    } else {
-      console.log('no token');
-    }
+    var jwt = window.localStorage.getItem('access_token');
+    jwt ? this.setState({ hasToken: true }) : console.log('sorry');
   },
 
   componentWillMount: function() {
@@ -29,7 +25,7 @@ var Main = React.createClass({
     //depending on whether or not there is a token in local storage
     return (
       <div>
-        {this.state.hasToken} ? <Userpage /> : <Homepage />
+        {this.state.hasToken ? <Userpage /> : <Homepage />}
       </div>
     )
   }

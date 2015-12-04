@@ -4,8 +4,18 @@ var ReactDOM = require('react-dom');
 var Homepage = React.createClass({
   getInitialState: function() {
     return {
-      hey: 'hello'
+      popUp: false
     }
+  },
+
+  showPopUp: function() {
+    this.setState({
+      popUp: true
+    })
+  },
+
+  createToken: function(input) {
+
   },
 
   render: function() {
@@ -17,10 +27,12 @@ var Homepage = React.createClass({
             <div className="tradesy-logo">Tradesy</div>
             <span className="homepage-header-right-links">
               <a className="homepage-links" href="/login">Login</a>
-              <a className="homepage-links" id="signup" href="/signup">Sign Up</a>
+              <a className="homepage-links" id="signup" onClick={this.showPopUp}>Sign Up</a>
             </span>
           </div>
         </div>
+
+        {this.state.popUp ? <div>Hey</div> : null}
 
         <div className="homepage-main-content">
           <div className="homepage-main-content-text">

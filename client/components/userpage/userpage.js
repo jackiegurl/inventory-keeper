@@ -6,7 +6,7 @@ var Userpage = React.createClass({
   render: function() {
     return (
       <div>
-        HelloThereHi
+        You have a token
       </div>
     )
   }
