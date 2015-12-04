@@ -10,4 +10,105 @@
 
 body {
   font-family: avenir-light;
+  font-weight: 100;
+}
+
+button {
+  font-family: avenir-light;
+}
+
+.homepage-background-content {
+  background: linear-gradient(to left top,#ffa376 0,#ffa376 28%,#e4778a 52%);
+  background-size: fill;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.homepage-header {
+  position: relative;
+}
+
+.homepage-header-content {
+  margin: 50px 150px 50px 150px;
+}
+
+.tradesy-logo {
+  font-family: didot;
+  font-size: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  float: left;
+}
+
+.homepage-header-right-links {
+  display: inline;
+  float: right;
+}
+
+.homepage-links {
+  font-size: 13px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+  padding: 5px 18px 5px 18px;
+}
+
+#signup {
+  font-weight: 600;
+  color: #aaef85;
+  border: 2px solid #aaef85;
+  border-radius: 5px;
+}
+
+#signup:hover {
+  color: #fff;
+  cursor: pointer;
+  border: 2px solid #74c947;
+  background-color: #74c947;
+  transition: 0.45s;
+}
+
+.homepage-main-content {
+  position: relative;
+  margin: 150px 150px 150px 150px;
+  color: #fff;
+}
+
+.homepage-main-content-text {
+  margin-top: 300px;
+  text-align: center;
+}
+
+#closet-cash {
+  font-size: 35px;
+  letter-spacing: 3px;
+  font-weight: 800;
+}
+
+#closet-headline {
+  font-size: 25px;
+  letter-spacing: 2px;
+  margin: 15px 0px 15px 0px;
+}
+
+#start-selling {
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: #fff;
+  background: linear-gradient(-180deg, #74C947 0, #3db94b 100%);
+  border: none;
+  border-radius: 5px;
+  margin: 5px 0px 5px 0px;
+  padding: 10px 40px 10px 40px;
+}
+
+#start-selling:hover {
+  background: linear-gradient(-180deg, #67bf38 0, #3db94b 100%);
 }
