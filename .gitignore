@@ -8,4 +8,6 @@ bower_components/
 # Webpack
 *bundle.js
 
+# DS Store
 .DS_Store
+assets/.DS_Store
