@@ -18,7 +18,14 @@ button {
 }
 
 .homepage-background-content {
-  background: linear-gradient(to left top,#ffa376 0,#ffa376 28%,#e4778a 52%);
+  background: 
+    linear-gradient(
+    rgba(250, 101, 86, 0.85), 
+    rgba(250, 101, 86, 0.85)
+    ), 
+    url("http://www.closetworks.com/Portals/70587/images/Simple_PopUp_2.jpg");
+  background-position: 70% 70%;
+  background-size: cover;
   background-size: fill;
   position: absolute;
   height: 100%;
