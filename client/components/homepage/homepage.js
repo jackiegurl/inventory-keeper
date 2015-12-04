@@ -9,7 +9,6 @@ var Homepage = React.createClass({
   },
 
   render: function() {
-   console.log(this.state.hey);
    return (
     <div>
       <div className="homepage-background-content">
@@ -37,5 +36,3 @@ var Homepage = React.createClass({
 });
 
 module.exports = Homepage;
-
-ReactDOM.render(<Homepage />, document.getElementById('app'));
