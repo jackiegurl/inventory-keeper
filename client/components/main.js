@@ -1,6 +1,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Homepage = require('./homepage/homepage.js')
+var Userpage = require('./userpage/userpage.js')
 
 var Main = React.createClass({
 
@@ -15,7 +16,7 @@ var Main = React.createClass({
     //depending on whether or not there is a token in local storage
     return (
       <div>
-        {this.state.hasToken} ? <UserPage /> : <Homepage />
+        {this.state.hasToken} ? <Userpage /> : <Homepage />
       </div>
     )
   }
