@@ -11,6 +11,19 @@ var Main = React.createClass({
     }
   },
 
+  checkToken: function() {
+    var tokenGet = window.localStorage.getItem('token');
+    if(tokenGet) {
+      console.log('we have the token');
+    } else {
+      console.log('no token');
+    }
+  },
+
+  componentWillMount: function() {
+    this.checkToken();
+  },
+
   render: function() {
     //the main page is used to check which view to display
     //depending on whether or not there is a token in local storage

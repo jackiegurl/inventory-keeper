@@ -6,7 +6,7 @@ var Userpage = React.createClass({
   render: function() {
     return (
       <div>
-        Hello
+        HelloThereHi
       </div>
     )
   }
