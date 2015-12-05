@@ -30,7 +30,7 @@ var Homepage = React.createClass({
           <div className="homepage-header-content">
             <div className="tradesy-logo">Tradesy</div>
             <span className="homepage-header-right-links">
-              <a className="homepage-links" href="/login">Login</a>
+              <a className="homepage-links">Login</a>
               <a id="homepage-links-signup" className="homepage-links" onClick={this.letsGetToken}>Sign Up</a>
             </span>
           </div>
