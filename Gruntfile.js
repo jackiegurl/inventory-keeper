@@ -15,7 +15,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     webpack: {
       webpackCheck: {
-        entry: './client/components/main.js',
+        entry: './client/components/main/main.js',
         output: {
           filename: './client/bundle.js'
         },

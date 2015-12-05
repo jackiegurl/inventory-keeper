@@ -26,7 +26,6 @@ button {
     url("http://www.closetworks.com/Portals/70587/images/Simple_PopUp_2.jpg");
   background-position: 70% 70%;
   background-size: cover;
-  background-size: fill;
   position: absolute;
   height: 100%;
   width: 100%;
@@ -67,14 +66,14 @@ button {
   padding: 5px 18px 5px 18px;
 }
 
-#signup {
+#homepage-links-signup {
   font-weight: 600;
   color: #aaef85;
   border: 2px solid #aaef85;
   border-radius: 5px;
 }
 
-#signup:hover {
+#homepage-links-signup:hover {
   color: #fff;
   cursor: pointer;
   border: 2px solid #74c947;
@@ -93,19 +92,19 @@ button {
   text-align: center;
 }
 
-#closet-cash {
+.closet-cash {
   font-size: 35px;
   letter-spacing: 3px;
   font-weight: 800;
 }
 
-#closet-headline {
+.closet-headline {
   font-size: 25px;
   letter-spacing: 2px;
   margin: 15px 0px 15px 0px;
 }
 
-#start-selling {
+.start-selling {
   font-size: 20px;
   letter-spacing: 1px;
   color: #fff;
@@ -116,7 +115,7 @@ button {
   padding: 10px 40px 10px 40px;
 }
 
-#start-selling:hover {
+.start-selling:hover {
   background: linear-gradient(-180deg, #67bf38 0, #3db94b 100%);
 }
 

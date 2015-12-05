@@ -1,7 +1,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Homepage = require('./homepage/homepage.js')
-var Userpage = require('./userpage/userpage.js')
+var Homepage = require('../homepage/homepage.js')
+var Userpage = require('../userpage/userpage.js')
 
 var Main = React.createClass({
 

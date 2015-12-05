@@ -1,5 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var Modal = require('./homepage-modal.js')
 
 var Homepage = React.createClass({
   getInitialState: function() {
@@ -8,14 +9,14 @@ var Homepage = React.createClass({
     }
   },
 
-  showPopUp: function() {
+  letsGetToken: function() {
     this.setState({
-      popUp: true
-    })
+      popUp: !this.state.popUp
+    });
   },
 
-  createToken: function(input) {
-
+  getNameCreateToken: function(input) {
+    window.localStorage.setItem('access_token', input);
   },
 
   render: function() {
@@ -27,18 +28,18 @@ var Homepage = React.createClass({
             <div className="tradesy-logo">Tradesy</div>
             <span className="homepage-header-right-links">
               <a className="homepage-links" href="/login">Login</a>
-              <a className="homepage-links" id="signup" onClick={this.showPopUp}>Sign Up</a>
+              <a id="homepage-links-signup" className="homepage-links" onClick={this.letsGetToken}>Sign Up</a>
             </span>
           </div>
         </div>
 
-        {this.state.popUp ? <div>Hey</div> : null}
 
         <div className="homepage-main-content">
           <div className="homepage-main-content-text">
-            <div id="closet-cash">Turn Your Closet Into Cash</div>
-            <div id="closet-headline">Selling is Safe and Simple</div>
-            <button id="start-selling">Start Selling</button>
+            <div className="closet-cash">Turn Your Closet Into Cash</div>
+            <div className="closet-headline">Selling is Safe and Simple</div>
+            <button className="start-selling" onClick={this.letsGetToken}>Start Selling</button>
+              {this.state.popUp ? <Modal className="homepage-links" getUserName={this.getNameCreateToken} /> : null}
           </div>
         </div>
       </div>
