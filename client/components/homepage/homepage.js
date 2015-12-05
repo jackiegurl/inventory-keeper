@@ -1,6 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Modal = require('./homepage-modal.js')
+var Modal = require('./modal.js')
 
 var Homepage = React.createClass({
   getInitialState: function() {
@@ -11,16 +11,15 @@ var Homepage = React.createClass({
   },
 
   letsGetToken: function() {
-    this.setState({
-      popUp: !this.state.popUp
-    });
+    this.setState({ popUp: !this.state.popUp });
   },
 
   getNameCreateToken: function(input) {
-    //store the token in input with access_token as the reference
+    //store session 
     window.localStorage.setItem('access_token', input);
-    this.setState({ tokenCreation: false });
-    this.props.tokenCreated();
+    //bubbles up to the parent to tell it that a token has been created
+    this.setState({ tokenCreation: true });
+    this.props.tokenCreated(this.state.tokenCreation);
   },
 
   render: function() {
@@ -36,7 +35,6 @@ var Homepage = React.createClass({
             </span>
           </div>
         </div>
-
 
         <div className="homepage-main-content">
           <div className="homepage-main-content-text">

@@ -20,8 +20,8 @@ var Main = React.createClass({
     this.checkToken();
   },
 
-  tokenTrue: function(input) {
-    input ? this.setState({ hasToken: true }) : null;
+  tokenToggle: function(input) {
+    input ? this.setState({ hasToken: !this.state.hasToken }) : null;
   },
 
   render: function() {
@@ -29,7 +29,7 @@ var Main = React.createClass({
     //depending on whether or not there is a token in local storage
     return (
       <div>
-        {this.state.hasToken ? <Userpage /> : <Homepage tokenCreated={this.tokenTrue} />}
+        {this.state.hasToken ? <Userpage tokenRemoval={this.tokenToggle} /> : <Homepage tokenCreated={this.tokenToggle} />}
       </div>
     )
   }

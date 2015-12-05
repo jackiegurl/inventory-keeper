@@ -17,7 +17,8 @@ var Modal = React.createClass({
     return (
      <div className='signup-input'>
       <form onSubmit={this.handleSubmit}>
-        <input type="text" ref="inputName" placeholder="create a username" onSubmit={this.props.getUserName} />
+        <input type="text" ref="inputName" className="input-text-username"
+        placeholder="create a username" onSubmit={this.props.getUserName} />
       </form>
      </div>
     )
