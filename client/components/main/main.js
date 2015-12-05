@@ -20,12 +20,16 @@ var Main = React.createClass({
     this.checkToken();
   },
 
+  tokenTrue: function(input) {
+    input ? this.setState({ hasToken: true }) : null;
+  },
+
   render: function() {
     //the main page is used to check which view to display
     //depending on whether or not there is a token in local storage
     return (
       <div>
-        {this.state.hasToken ? <Userpage /> : <Homepage />}
+        {this.state.hasToken ? <Userpage /> : <Homepage tokenCreated={this.tokenTrue} />}
       </div>
     )
   }

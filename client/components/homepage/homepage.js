@@ -5,7 +5,8 @@ var Modal = require('./homepage-modal.js')
 var Homepage = React.createClass({
   getInitialState: function() {
     return {
-      popUp: false
+      popUp: false,
+      tokenCreation: false
     }
   },
 
@@ -16,12 +17,15 @@ var Homepage = React.createClass({
   },
 
   getNameCreateToken: function(input) {
+    //store the token in input with access_token as the reference
     window.localStorage.setItem('access_token', input);
+    this.setState({ tokenCreation: false });
+    this.props.tokenCreated();
   },
 
   render: function() {
    return (
-    <div>
+    <div onSubmit={this.props.tokenCreated}>
       <div className="homepage-background-content">
         <div className="homepage-header">
           <div className="homepage-header-content">
