@@ -17,6 +17,10 @@ body {
   font-family: avenir-light;
 }
 
+ol {
+  list-style: none;
+}
+
 .homepage-background-content {
   background: 
     linear-gradient(
@@ -155,4 +159,46 @@ body {
 .userpage-main-content {
   position: relative;
   margin: 150px 150px 150px 150px;
+}
+
+.inventory-content {
+  text-align: center;
+  margin-top: 10%;
+}
+
+.inventory-steps {
+  margin: 5% 0% 5% 0%;
+}
+
+.inventory-steps-title {
+  font-size: 11px;
+  color: #999;
+  text-transform: uppercase;
+  display: block;
+}
+
+.inventory-steps-number {
+  color: #fff;
+  font-size: 11px;
+  line-height: 22px;
+  text-align: center;
+  font-weight: bold;
+  vertical-align: baseline;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  background-color: #fb5b4c;
+  opacity: 0.5;
+  margin-bottom: 0.6%;
+}
+
+.userpage-header {
+  font-family: didot;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #666;
 }
