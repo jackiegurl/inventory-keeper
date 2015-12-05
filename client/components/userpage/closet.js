@@ -5,7 +5,9 @@ var Closet = React.createClass({
 
   render: function() {
     return (
-     
+     <div>
+      Item1
+     </div>
     )
   }
 });

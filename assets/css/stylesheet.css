@@ -142,12 +142,17 @@ body {
 }
 
 .userpage-topbar {
-  position: absolute;
+  background-color: #000;
+  color: #fff;
   height: 130px;
   width: 100%;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  background-color: #000;
-  color: #fff;
+}
+
+.userpage-main-content {
+  position: relative;
+  margin: 150px 150px 150px 150px;
 }

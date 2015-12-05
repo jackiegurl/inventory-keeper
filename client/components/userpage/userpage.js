@@ -18,6 +18,10 @@ var Userpage = React.createClass({
             <Header tokenRemoval={this.removeToken} />
           </div>
         </div>
+
+        <div className="userpage-main-content">
+          <Closet />
+        </div>
       </div>
     )
   }
