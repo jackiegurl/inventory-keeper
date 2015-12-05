@@ -13,7 +13,7 @@ body {
   font-weight: 100;
 }
 
-button {
+* {
   font-family: avenir-light;
 }
 
@@ -123,11 +123,31 @@ button {
   background-color: #000;
 }
 
+::-webkit-input-placeholder {
+  color: #fff;
+  text-align: center;
+}
+
 .input-text-username {
-  top: 70px;
+  font-size: 14px;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.3);
+  top: 150px;
   width: 250px;
   padding: 5px 5px 5px 5px;
-  border:none;
-  border-radius: 5;
+  border: 2px solid #fff;
+  border-radius: 5px;
   margin-top: 2%;
+  text-align: center;
+}
+
+.userpage-topbar {
+  position: absolute;
+  height: 130px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  color: #fff;
 }

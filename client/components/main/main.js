@@ -13,15 +13,11 @@ var Main = React.createClass({
 
   checkToken: function() {
     var jwt = window.localStorage.getItem('access_token');
-    jwt ? this.setState({ hasToken: true }) : console.log('sorry');
+    jwt ? this.setState({ hasToken: true }) : this.setState({ hasToken: false });
   },
 
   componentWillMount: function() {
     this.checkToken();
-  },
-
-  tokenToggle: function(input) {
-    input ? this.setState({ hasToken: !this.state.hasToken }) : null;
   },
 
   render: function() {
@@ -29,7 +25,7 @@ var Main = React.createClass({
     //depending on whether or not there is a token in local storage
     return (
       <div>
-        {this.state.hasToken ? <Userpage tokenRemoval={this.tokenToggle} /> : <Homepage tokenCreated={this.tokenToggle} />}
+        {this.state.hasToken ? <Userpage tokenRemoval={this.checkToken} /> : <Homepage tokenCreated={this.checkToken} />}
       </div>
     )
   }

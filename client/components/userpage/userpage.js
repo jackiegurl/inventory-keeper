@@ -1,18 +1,23 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var Header = require('./header.js');
+var Closet = require('./closet.js');
 
 var Userpage = React.createClass({
 
-  logOut: function() {
-    window.localStorage.clearStorage();
+  removeToken: function() {
+    window.localStorage.clear();
     this.props.tokenRemoval();
   },
 
   render: function() {
     return (
       <div>
-        You have a token
-        <button onClick={this.props.tokenRemoval}>Log Out</button>
+        <div className="userpage-topbar">
+          <div className="homepage-header-content">
+            <Header tokenRemoval={this.removeToken} />
+          </div>
+        </div>
       </div>
     )
   }
