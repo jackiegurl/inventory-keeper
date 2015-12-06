@@ -10,7 +10,8 @@ var TypeCondition = React.createClass({
   },
 
   setNew: function() {
-    this.setState({ wornDescriptionShow: "new" });
+    this.state.wornDescriptionShow = "new";
+    this.setState({ wornDescriptionShow: this.state.wornDescriptionShow });
 
     $("#type-new").addClass("inventory-typeItem-clicked");
     $("#type-new-text").addClass("inventory-typeItem-clicked-text");
@@ -21,11 +22,12 @@ var TypeCondition = React.createClass({
     $("#type-gentlyWorn").removeClass("inventory-typeItem-clicked");
     $("#type-gentlyWorn-text").removeClass("inventory-typeItem-clicked-text");
 
-    this.props.itemConditionSelection("new");
+    this.props.itemConditionSelection(this.state.wornDescriptionShow);
   },
 
   setLikeNew: function() {
-    this.setState({ wornDescriptionShow: "like new" });
+    this.state.wornDescriptionShow = "like new";
+    this.setState({ wornDescriptionShow: this.state.wornDescriptionShow });
 
     $("#type-likeNew").addClass("inventory-typeItem-clicked");
     $("#type-likeNew-text").addClass("inventory-typeItem-clicked-text");
@@ -36,11 +38,12 @@ var TypeCondition = React.createClass({
     $("#type-gentlyWorn").removeClass("inventory-typeItem-clicked");
     $("#type-gentlyWorn-text").removeClass("inventory-typeItem-clicked-text");
 
-    this.props.itemConditionSelection("like new");
+    this.props.itemConditionSelection(this.state.wornDescriptionShow);
   },
 
   setGentlyWorn: function() {
-    this.setState({ wornDescriptionShow: "gently worn" });
+    this.state.wornDescriptionShow = "gently worn";
+    this.setState({ wornDescriptionShow: this.state.wornDescriptionShow });
 
     $("#type-gentlyWorn").addClass("inventory-typeItem-clicked");
     $("#type-gentlyWorn-text").addClass("inventory-typeItem-clicked-text");
@@ -51,7 +54,7 @@ var TypeCondition = React.createClass({
     $("#type-new").removeClass("inventory-typeItem-clicked");
     $("#type-new-text").removeClass("inventory-typeItem-clicked-text");
 
-   this.props.itemConditionSelection("gently worn");
+   this.props.itemConditionSelection(this.state.wornDescriptionShow);
   },
 
   render: function() {

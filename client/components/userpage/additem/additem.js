@@ -19,16 +19,23 @@ var AddItem = React.createClass({
   },
 
   submitItemInfo: function() {
+    this.state.brand = this.refs.itemBrand.value;
+    this.state.image = this.refs.itemImage.value;
+    this.state.headline = this.refs.itemHeadline.value;
+    this.state.description = this.refs.itemDescription.value;
+    this.state.color = this.refs.itemColor.value;
+    this.state.price = this.refs.itemPrice.value;
+
     this.setState({
-      brand: this.refs.itemBrand.value,
-      image: this.refs.itemImage.value,
-      headline: this.refs.itemHeadline.value,
-      description: this.refs.itemDescription.value,
-      color: this.refs.itemColor.value,
-      price: this.refs.itemPrice.value
+      brand: this.state.brand,
+      image: this.state.image,
+      headline: this.state.headline,
+      description: this.state.description,
+      color: this.state.color,
+      price: this.state.price
     });
 
-    console.log(this.state);
+    console.log(this.state)
   },
 
   itemConditionSelection: function(conditionInput) {
@@ -168,7 +175,7 @@ var AddItem = React.createClass({
 
               <div className="col-md-8">
                 <div className="inventory-rightcol-text">
-                  <input type="number" value="0.00" min="0.01" max="9999" step="0.01"className="inventory-text-price" ref="itemPrice" required/>
+                  <input type="number" min="0.01" max="9999" step="0.01" className="inventory-text-price" ref="itemPrice" required/>
                 </div>
               </div>
             </div>
