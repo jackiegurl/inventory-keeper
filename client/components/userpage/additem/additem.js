@@ -31,8 +31,6 @@ var AddItem = React.createClass({
   },
 
   submitItemInfo: function(event) {
-    event.preventDefault();
-
     this.state.brand = this.refs.itemBrand.value;
     this.state.image = this.refs.itemImage.value;
     this.state.headline = this.refs.itemHeadline.value;
@@ -49,7 +47,6 @@ var AddItem = React.createClass({
       price: this.state.price
     });
 
-    console.log(this.state, 'this state')
     this.props.getSubmission(this.state);
   },
 
@@ -63,8 +60,8 @@ var AddItem = React.createClass({
 
   render: function() {
     return ( 
-      <div onClick={this.props.getSubmission}>
-        <form>
+      <div>
+        <form onSubmit={this.submitItemInfo}>
         <div className="inventory-content">
           <div className="userpage-header">Add an Item to your Closet</div>
           <div className="inventory-input-box">
@@ -196,11 +193,11 @@ var AddItem = React.createClass({
                 </div>
               </div>
             </div>
-            <button id="submit-to-check" className="inventory-submit" onSubmit=
-            {this.submitItemInfo}>Submit</button>
+            <button id="submit-to-check" className="inventory-submit"
+            onSubmit={this.props.getSubmission}>Submit</button>
           </div>
         </div>
-            </form>
+       </form>
       </div>
     )
   }

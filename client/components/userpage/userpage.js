@@ -33,9 +33,9 @@ var Userpage = React.createClass({
   },
 
   handleSubmission: function(input) {
-    console.log(input.target.value, "other one");
+    console.log(input, "what is coming in submission");
   },
-
+  
   render: function() {
     var pageRender;
 
