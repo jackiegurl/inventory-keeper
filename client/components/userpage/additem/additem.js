@@ -5,6 +5,40 @@ var TypeCondition = require('./typecondition.js')
 
 var AddItem = React.createClass({
 
+  getInitialState: function() {
+    return {
+      type: '',
+      brand: '',
+      image: '',
+      headline: '',
+      description: '',
+      color: '',
+      condition: '',
+      price: 0
+    }
+  },
+
+  submitItemInfo: function() {
+    this.setState({
+      brand: this.refs.itemBrand.value,
+      image: this.refs.itemImage.value,
+      headline: this.refs.itemHeadline.value,
+      description: this.refs.itemDescription.value,
+      color: this.refs.itemColor.value,
+      price: this.refs.itemPrice.value
+    });
+
+    console.log(this.state);
+  },
+
+  itemConditionSelection: function(conditionInput) {
+    this.setState({ condition: conditionInput });
+  },
+
+  itemTypeSelection: function(typeInput) {
+    this.setState({ type: typeInput });
+  },
+
   render: function() {
     return ( 
       <div>
@@ -21,7 +55,7 @@ var AddItem = React.createClass({
 
               <div className="col-md-8">
                 <div className="inventory-rightcol-text">
-                  <TypeItem />
+                  <TypeItem itemTypeSelection={this.itemTypeSelection} />
                 </div>
               </div>
             </div>
@@ -35,7 +69,8 @@ var AddItem = React.createClass({
 
               <div className="col-md-8">
                 <div className="inventory-rightcol-text">
-                  <input type="file" name="pic" accept="image/*"/>
+                  <input type="file" name="pic" accept="image/*"
+                  ref="itemImage"/>
                 </div>
               </div>
             </div>
@@ -49,7 +84,8 @@ var AddItem = React.createClass({
 
               <div className="col-md-8">
                 <div className="inventory-rightcol-text">
-                  <input type="text" className="inventory-text-price"/>
+                  <input type="text" className="inventory-text-price"
+                  ref="itemBrand"/>
                 </div>
               </div>
             </div>
@@ -68,7 +104,8 @@ var AddItem = React.createClass({
 
               <div className="col-md-8">
                 <div className="inventory-rightcol-text">
-                  <textarea type="text" className="inventory-textarea"/>
+                  <textarea type="text" 
+                  className="inventory-textarea" ref="itemHeadline"/>
                 </div>
               </div>
             </div>
@@ -87,7 +124,8 @@ var AddItem = React.createClass({
               <div className="col-md-8">
                 <div className="inventory-rightcol-text">
                   <textarea type="text" 
-                  className="inventory-textarea-description"/>
+                  className="inventory-textarea-description"
+                  ref="itemDescription"/>
                 </div>
               </div>
             </div>
@@ -101,7 +139,7 @@ var AddItem = React.createClass({
 
               <div className="col-md-8">
                 <div className="inventory-rightcol-text">
-                  <input type="text" className="inventory-text-price"/>
+                  <input type="text" className="inventory-text-price" ref="itemColor"/>
                 </div>
               </div>
             </div>
@@ -115,7 +153,8 @@ var AddItem = React.createClass({
 
               <div className="col-md-8">
                 <div className="inventory-rightcol-text">
-                  <TypeCondition />
+                  <TypeCondition itemConditionSelection=
+                  {this.itemConditionSelection} />
                 </div>
               </div>
             </div>
@@ -129,12 +168,13 @@ var AddItem = React.createClass({
 
               <div className="col-md-8">
                 <div className="inventory-rightcol-text">
-                  <input type="number" value="0.00" min="0.01" max="9999" step="0.01"className="inventory-text-price"required/>
+                  <input type="number" value="0.00" min="0.01" max="9999" step="0.01"className="inventory-text-price" ref="itemPrice" required/>
                 </div>
               </div>
             </div>
 
-            <button className="inventory-submit">Submit</button>
+            <button className="inventory-submit" onClick=
+            {this.submitItemInfo}>Submit</button>
           </div>
         </div>
       </div>

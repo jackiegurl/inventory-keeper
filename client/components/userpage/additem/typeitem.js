@@ -19,6 +19,8 @@ var TypeItem = React.createClass({
 
     $("#type-shoes").removeClass("inventory-typeItem-clicked");
     $("#type-shoes-text").removeClass("inventory-typeItem-clicked-text");
+
+    this.props.itemTypeSelection("clothes");
   },
 
   setAccessories: function() {
@@ -31,6 +33,8 @@ var TypeItem = React.createClass({
 
     $("#type-shoes").removeClass("inventory-typeItem-clicked");
     $("#type-shoes-text").removeClass("inventory-typeItem-clicked-text");
+
+    this.props.itemTypeSelection("accessories");
   },
 
   setShoes: function() {
@@ -43,6 +47,8 @@ var TypeItem = React.createClass({
 
     $("#type-clothes").removeClass("inventory-typeItem-clicked");
     $("#type-clothes-text").removeClass("inventory-typeItem-clicked-text");
+
+    this.props.itemTypeSelection("shoes");
   },
 
   render: function() {
@@ -60,7 +66,7 @@ var TypeItem = React.createClass({
     }
 
     return (
-      <div>
+      <div onChange={this.props.itemTypeSelection}>
         <table className="inventory-table">
           <tr>
             <td className="inventory-table-td">

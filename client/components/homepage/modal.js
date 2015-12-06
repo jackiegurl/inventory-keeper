@@ -6,7 +6,7 @@ var Modal = React.createClass({
   handleSubmit: function(e) {
     e.preventDefault();
     //grabs the input value
-    var userName = this.refs.inputName.value
+    var userName = this.refs.inputName.value;
     //bubbles it to the parent
     this.props.getUserName(userName);
     //clears the input text on submission
