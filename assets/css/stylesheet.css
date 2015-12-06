@@ -294,7 +294,7 @@ ol {
 
 .inventory-textarea {
   width: 100%;
-  height: 30px;
+  height: 58px;
   border: 1px solid #333;
   padding: 8px 8px 8px 8px;
 }
@@ -348,4 +348,10 @@ ol {
 
 .inventory-typeItem-clicked-text {
   color: #fff;
+}
+
+.inventory-text-price {
+  width: 100%;
+  border: 1px solid #333;
+  padding: 5px 5px 5px 5px;
 }
