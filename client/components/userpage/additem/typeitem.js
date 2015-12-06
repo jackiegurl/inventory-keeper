@@ -61,17 +61,25 @@ var TypeItem = React.createClass({
 
     return (
       <div>
-        <div className="row">
-          <div id="type-clothes" className="inventory-type col-md-4" onClick={this.setClothes}>
-            <div id="type-clothes-text" className="inventory-type-title">Clothes</div>
-          </div>
-          <div id="type-accessories" className="inventory-type col-md-4" onClick={this.setAccessories}>
-            <div id="type-accessories-text" className="inventory-type-title">Accessories</div>
-          </div>
-          <div id="type-shoes" className="inventory-type-lastbox col-md-4" onClick={this.setShoes}>
-            <div id="type-shoes-text" className="inventory-type-title">Shoes</div>
-          </div>
-        </div>
+        <table className="inventory-table">
+          <tr>
+            <td className="inventory-table-td">
+              <div id="type-clothes" onClick={this.setClothes}>
+                <div id="type-clothes-text" className="inventory-type-title">Clothes</div>
+              </div>
+            </td>
+            <td className="inventory-table-td">
+              <div id="type-accessories" className="inventory-type" onClick={this.setAccessories}>
+                <div id="type-accessories-text" className="inventory-type-title">Accessories</div>
+              </div>
+            </td>
+            <td className="inventory-table-td">
+              <div id="type-shoes" className="inventory-type-lastbox" onClick={this.setShoes}>
+                <div id="type-shoes-text" className="inventory-type-title">Shoes</div>
+              </div>
+            </td>
+          </tr>
+        </table>
         <div className="inventory-typeItem-small-description">
           {typeDescription}
         </div>

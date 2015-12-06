@@ -28,6 +28,10 @@ ol {
   display: inline;
 }
 
+table {
+  border: 1px solid #333;
+}
+
 .homepage-background-content {
   background: 
     linear-gradient(
@@ -280,16 +284,11 @@ ol {
 }
 
 .inventory-type {
-  border-top: 1px solid #333;
   border-left: 1px solid #333;
-  border-bottom: 1px solid #333;
 }
 
 .inventory-type-lastbox {
-  border-top: 1px solid #333;
   border-left: 1px solid #333;
-  border-right: 1px solid #333;
-  border-bottom: 1px solid #333;
 }
 
 .inventory-textarea {
@@ -331,6 +330,7 @@ ol {
   font-size: 12px;
   text-transform: uppercase;
   padding: 5px 0px 5px 0px;
+  text-align: center;
 }
 
 .inventory-typeItem-small-description {
@@ -354,4 +354,13 @@ ol {
   width: 100%;
   border: 1px solid #333;
   padding: 5px 5px 5px 5px;
+}
+
+.inventory-table {
+  border: 1px solid #333;
+  width: 100%;
+}
+
+.inventory-table-td {
+  width: 33.33%;
 }
