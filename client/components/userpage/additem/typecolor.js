@@ -1,15 +1,14 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-var Closet = React.createClass({
-
+var TypeColor = React.createClass({
   render: function() {
     return (
-     <div>
-      Items Go Here
-     </div>
+      <div>
+        Color
+      </div>
     )
   }
 });
 
-module.exports = Closet;
+module.exports = TypeColor;

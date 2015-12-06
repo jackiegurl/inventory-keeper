@@ -6,7 +6,8 @@ module.exports = function(grunt) {
   var nonStaticJSFiles = [
    'client/*.js',
    'client/components/*.js',
-   'client/components/*/*.js'
+   'client/components/*/*.js',
+   'client/components/*/*/*.js'
   ]
 
   var cssJS = cssFiles.concat(nonStaticJSFiles);

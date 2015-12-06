@@ -17,8 +17,15 @@ body {
   font-family: avenir-light;
 }
 
+a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
 ol {
   list-style: none;
+  vertical-align: middle;
+  display: inline;
 }
 
 .homepage-background-content {
@@ -170,9 +177,15 @@ ol {
   margin: 5% 0% 5% 0%;
 }
 
+.inventory-steps-container {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
 .inventory-steps-title {
+  text-align: center;
   font-size: 11px;
-  color: #999;
+  color: #333;
   text-transform: uppercase;
   display: block;
 }
@@ -196,9 +209,58 @@ ol {
 }
 
 .userpage-header {
-  font-family: didot;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   color: #666;
+  display: block;
+  margin-top: 2%;
+}
+
+.inventory-input-box {
+  margin: 5% 10% 3% 10%;
+}
+
+.inventory-input {
+  height: 20px;
+  width: 200px;
+  display: inline-block;
+  border: 1px solid #333;
+}
+
+.inventory-input-padding {
+  margin: 1% 0% 1% 0%;
+}
+
+.inventory-leftcol-text {
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+
+.inventory-righcol-text {
+  text-align: left;
+}
+
+.inventory-upload {
+  border: 1px solid #333;
+  width: 40%;
+  padding: 10px 10px 10px 10px;
+}
+
+.inventory-each-box {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+.inventory-col-padding {
+  margin: 3% 0% 3% 0%;
+}
+
+.inventory-type {
+  border: 1px solid #ccc;
 }
