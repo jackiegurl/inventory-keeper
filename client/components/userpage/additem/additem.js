@@ -45,13 +45,37 @@ var AddItem = React.createClass({
             <div className="inventory-col-padding row">
               <div className="col-md-4">
                 <div className="inventory-leftcol-text">
-                  Item Description
+                  Item Headline
+                  <div className="inventory-type-small-description">
+                    i.e
+                    Leather Jacket with Vintage Patches,
+                    Belt with a Britney Spears signature
+                  </div>
                 </div>
               </div>
 
               <div className="col-md-8">
                 <div className="inventory-rightcol-text">
-                  description of item goes here
+                  <textarea type="text" className="inventory-textarea"/>
+                </div>
+              </div>
+            </div>
+
+            <div className="inventory-col-padding row">
+              <div className="col-md-4">
+                <div className="inventory-leftcol-text">
+                  Item Description
+                  <div className="inventory-type-small-description">
+                    i.e. Great dress with normal
+                    wear; perfect for a sunday morning outing
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-md-8">
+                <div className="inventory-rightcol-text">
+                  <textarea type="text" 
+                  className="inventory-textarea-description"/>
                 </div>
               </div>
             </div>
@@ -84,6 +108,7 @@ var AddItem = React.createClass({
               </div>
             </div>
 
+            <button className="inventory-submit">Submit</button>
           </div>
         </div>
       </div>
