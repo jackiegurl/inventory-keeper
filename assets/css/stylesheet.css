@@ -341,3 +341,11 @@ ol {
   padding-top: 10px;
   text-align: center;
 }
+
+.inventory-typeItem-clicked {
+  background-color: #ff8187;
+}
+
+.inventory-typeItem-clicked-text {
+  color: #fff;
+}

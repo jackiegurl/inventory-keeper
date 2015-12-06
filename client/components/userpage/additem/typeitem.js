@@ -11,37 +11,42 @@ var TypeItem = React.createClass({
 
   setClothes: function() {
     this.setState({ descriptionShow: "clothes" });
-    $("#type-clothes").css({
-      "background-color": "#ff8187"
-    });
-    $("#type-clothes-text").css({
-      "color": "#fff"
-    });
+    $("#type-clothes").addClass("inventory-typeItem-clicked");
+    $("#type-clothes-text").addClass("inventory-typeItem-clicked-text");
+
+    $("#type-accessories").removeClass("inventory-typeItem-clicked");
+    $("#type-accessories-text").removeClass("inventory-typeItem-clicked-text");
+
+    $("#type-shoes").removeClass("inventory-typeItem-clicked");
+    $("#type-shoes-text").removeClass("inventory-typeItem-clicked-text");
   },
 
   setAccessories: function() {
     this.setState({ descriptionShow: "accessories" });
-    $("#type-accessories").css({
-      "background-color": "#ff8187"
-    });
-    $("#type-accessories-text").css({
-      "color": "#fff"
-    });
+    $("#type-accessories").addClass("inventory-typeItem-clicked");
+    $("#type-accessories-text").addClass("inventory-typeItem-clicked-text");
+
+    $("#type-clothes").removeClass("inventory-typeItem-clicked");
+    $("#type-clothes-text").removeClass("inventory-typeItem-clicked-text");
+
+    $("#type-shoes").removeClass("inventory-typeItem-clicked");
+    $("#type-shoes-text").removeClass("inventory-typeItem-clicked-text");
   },
 
   setShoes: function() {
     this.setState({ descriptionShow: "shoes" });
-    $("#type-shoes").css({
-      "background-color": "#ff8187"
-    });
-    $("#type-shoes-text").css({
-      "color": "#fff"
-    });
+    $("#type-shoes").addClass("inventory-typeItem-clicked");
+    $("#type-shoes-text").addClass("inventory-typeItem-clicked-text");
+
+    $("#type-accessories").removeClass("inventory-typeItem-clicked");
+    $("#type-accessories-text").removeClass("inventory-typeItem-clicked-text");
+
+    $("#type-clothes").removeClass("inventory-typeItem-clicked");
+    $("#type-clothes-text").removeClass("inventory-typeItem-clicked-text");
   },
 
   render: function() {
     var typeDescription;
-
     switch(this.state.descriptionShow) {
       case "clothes":
         typeDescription = "tops, shirts, tanktops, bottoms, jackets, outerwear";
