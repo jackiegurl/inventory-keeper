@@ -32,6 +32,10 @@ var Userpage = React.createClass({
     this.setState({ pageKey: "addItem" });
   },
 
+  handleSubmission: function(input) {
+    console.log(input.target.value, "other one");
+  },
+
   render: function() {
     var pageRender;
 
@@ -40,7 +44,7 @@ var Userpage = React.createClass({
         pageRender = <Closet />;
         break;
       case "addItem":
-        pageRender = <AddItem />;
+        pageRender = <AddItem getSubmission={this.handleSubmission} />;
         break;
     }
     

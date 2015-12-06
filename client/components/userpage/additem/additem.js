@@ -23,7 +23,6 @@ var AddItem = React.createClass({
     var eventId = event.target.id;
 
     if(eventValue.length < 1) {
-      console.log(eventId);
       $("#" + eventId).css({ "background-color": "#eee" });
       $("#" + eventId).append()
     } else if (eventValue.length > 2) {
@@ -50,7 +49,8 @@ var AddItem = React.createClass({
       price: this.state.price
     });
 
-    console.log(this.state)
+    console.log(this.state, 'this state')
+    this.props.getSubmission(this.state);
   },
 
   itemConditionSelection: function(conditionInput) {
@@ -63,7 +63,7 @@ var AddItem = React.createClass({
 
   render: function() {
     return ( 
-      <div>
+      <div onClick={this.props.getSubmission}>
         <form>
         <div className="inventory-content">
           <div className="userpage-header">Add an Item to your Closet</div>
