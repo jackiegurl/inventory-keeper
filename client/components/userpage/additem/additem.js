@@ -7,18 +7,33 @@ var AddItem = React.createClass({
 
   getInitialState: function() {
     return {
-      type: '',
-      brand: '',
-      image: '',
-      headline: '',
-      description: '',
-      color: '',
-      condition: '',
+      type: null,
+      brand: null,
+      image: null,
+      headline: null,
+      description: null,
+      color: null,
+      condition: null,
       price: 0
     }
   },
 
-  submitItemInfo: function() {
+  checkInput: function(event) {
+    var eventValue = event.target.value;
+    var eventId = event.target.id;
+
+    if(eventValue.length < 1) {
+      console.log(eventId);
+      $("#" + eventId).css({ "background-color": "#eee" });
+      $("#" + eventId).append()
+    } else if (eventValue.length > 2) {
+      $("#" + eventId).css({ "background-color": "transparent" });
+    }
+  },
+
+  submitItemInfo: function(event) {
+    event.preventDefault();
+
     this.state.brand = this.refs.itemBrand.value;
     this.state.image = this.refs.itemImage.value;
     this.state.headline = this.refs.itemHeadline.value;
@@ -49,6 +64,7 @@ var AddItem = React.createClass({
   render: function() {
     return ( 
       <div>
+        <form>
         <div className="inventory-content">
           <div className="userpage-header">Add an Item to your Closet</div>
           <div className="inventory-input-box">
@@ -77,7 +93,7 @@ var AddItem = React.createClass({
               <div className="col-md-8">
                 <div className="inventory-rightcol-text">
                   <input type="file" name="pic" accept="image/*"
-                  ref="itemImage"/>
+                  ref="itemImage" required/>
                 </div>
               </div>
             </div>
@@ -92,7 +108,7 @@ var AddItem = React.createClass({
               <div className="col-md-8">
                 <div className="inventory-rightcol-text">
                   <input type="text" className="inventory-text-price"
-                  ref="itemBrand"/>
+                  id="inv-brand" onChange={this.checkInput} ref="itemBrand" required/>
                 </div>
               </div>
             </div>
@@ -112,7 +128,8 @@ var AddItem = React.createClass({
               <div className="col-md-8">
                 <div className="inventory-rightcol-text">
                   <textarea type="text" 
-                  className="inventory-textarea" ref="itemHeadline"/>
+                  className="inventory-textarea" ref="itemHeadline" 
+                  id="inv-headline" onChange={this.checkInput} required/>
                 </div>
               </div>
             </div>
@@ -131,8 +148,8 @@ var AddItem = React.createClass({
               <div className="col-md-8">
                 <div className="inventory-rightcol-text">
                   <textarea type="text" 
-                  className="inventory-textarea-description"
-                  ref="itemDescription"/>
+                  className="inventory-textarea-description" id="inv-description"
+                  ref="itemDescription" onChange={this.checkInput} required/>
                 </div>
               </div>
             </div>
@@ -146,7 +163,7 @@ var AddItem = React.createClass({
 
               <div className="col-md-8">
                 <div className="inventory-rightcol-text">
-                  <input type="text" className="inventory-text-price" ref="itemColor"/>
+                  <input type="text" id="inv-color" className="inventory-text-price" ref="itemColor" onChange={this.checkInput} required/>
                 </div>
               </div>
             </div>
@@ -175,15 +192,15 @@ var AddItem = React.createClass({
 
               <div className="col-md-8">
                 <div className="inventory-rightcol-text">
-                  <input type="number" min="0.01" max="9999" step="0.01" className="inventory-text-price" ref="itemPrice" required/>
+                  <input type="number" id="inv-number" min="0.01" max="9999" step="0.01" className="inventory-text-price" ref="itemPrice" onChange={this.checkInput} required/>
                 </div>
               </div>
             </div>
-
-            <button className="inventory-submit" onClick=
+            <button id="submit-to-check" className="inventory-submit" onSubmit=
             {this.submitItemInfo}>Submit</button>
           </div>
         </div>
+            </form>
       </div>
     )
   }
