@@ -129,7 +129,7 @@ var AddItem = React.createClass({
 
               <div className="col-md-8">
                 <div className="inventory-rightcol-text">
-                  <input type="number" min="1" max="9999" className="inventory-text-price"/>
+                  <input type="number" value="0.00" min="0.01" max="9999" step="0.01"className="inventory-text-price"required/>
                 </div>
               </div>
             </div>
