@@ -63,9 +63,27 @@ ol {
   float: left;
 }
 
+.tradesy-logo-user {
+  font-family: didot;
+  font-size: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  float: left;
+  position: relative;
+  top: -13px;
+}
+
 .homepage-header-right-links {
   display: inline;
   float: right;
+}
+
+.homepage-header-right-links-user {
+  display: inline;
+  float: right;
+  position: relative;
+  top: -13px;
 }
 
 .homepage-links {
@@ -155,7 +173,7 @@ ol {
 .userpage-topbar {
   background-color: #000;
   color: #fff;
-  height: 130px;
+  height: 100px;
   width: 100%;
   position: absolute;
   top: 0;
@@ -165,7 +183,7 @@ ol {
 
 .userpage-main-content {
   position: relative;
-  margin: 150px 150px 50px 150px;
+  margin: 135px 150px 50px 150px;
 }
 
 .inventory-content {
@@ -302,7 +320,7 @@ ol {
 }
 
 .inventory-type-small-description {
-  color: #ccc;
+  color: #999;
   font-size: 9px;
   width: 60%;
   padding-top: 5px;
@@ -313,4 +331,13 @@ ol {
   font-size: 12px;
   text-transform: uppercase;
   padding: 5px 0px 5px 0px;
+}
+
+.inventory-typeItem-small-description {
+  color: #999;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding-top: 10px;
+  text-align: center;
 }

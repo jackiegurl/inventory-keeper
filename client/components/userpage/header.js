@@ -6,8 +6,8 @@ var Userpage = React.createClass({
   render: function() {
     return (
       <div className="homepage-header">
-        <div className="tradesy-logo">Tradesy</div>
-        <span className="homepage-header-right-links">
+        <div className="tradesy-logo-user">Tradesy</div>
+        <span className="homepage-header-right-links-user">
           <a onClick={this.props.goCloset} className="homepage-links">My Closet</a>
           <a onClick={this.props.goAddItem} className="homepage-links">Add Item</a>
           <a onClick={this.props.tokenRemoval} className="homepage-links">Log Out</a>
