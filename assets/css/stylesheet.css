@@ -236,7 +236,7 @@ table {
 }
 
 .userpage-header {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -261,7 +261,7 @@ table {
 }
 
 .inventory-leftcol-text {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -314,9 +314,8 @@ table {
   color: #fff;
   background-color: #ff8187;
   text-transform: uppercase;
-  padding: 10px 60px 10px 60px;
+  padding: 5px 60px 5px 60px;
   border: none;
-  margin: 3% 0% 3% 0%;
 }
 
 .inventory-submit:hover {
