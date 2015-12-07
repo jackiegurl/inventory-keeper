@@ -3,14 +3,17 @@ var ReactDOM = require("react-dom");
 var Header = require("./header.js");
 var Closet = require("./closet/closet.js");
 var AddItem = require("./additem/additem.js");
-var FireBaseUtils = require("../../utils/helpers.js");
 var DummyData = require("../../utils/dummydata.js");
+var Firebase = require("firebase");
+
+var jwtName = window.localStorage.getItem('access_token');
 
 var Userpage = React.createClass({
 
+
   getInitialState: function() {
     //there are true and false statements on each component so the page knows which one to render
-    var jwtName = window.localStorage.getItem('access_token');
+    var self = this;
 
     return {
       pageKey: "closet",
@@ -42,11 +45,15 @@ var Userpage = React.createClass({
   },
 
   handleSubmission: function(input) {
+    var currentStorage = window.localStorage.setItem("inventory", JSON.stringify(this.state.items.concat([input])));
+    var setStorage = window.localStorage.getItem("inventory");
+
     this.setState({ 
-      items: this.state.items.concat([input]),
+      items: JSON.parse(setStorage),
       pageKey: "closet" 
     }, function() { 
-      FireBaseUtils.pushInventory(this.state.userName,input);
+      console.log(input, "handleSubmission")
+      window.localStorage.setItem("inventory", JSON.stringify(this.state.items));
     });
   },
 
@@ -63,7 +70,7 @@ var Userpage = React.createClass({
     }
     
     return (
-      <div>
+      <div onFocus={this.loadCloset}>
         <div className="userpage-topbar">
           <div className="homepage-header-content">
             <Header goCloset={this.handleClosetOnClick} goAddItem={this.handleAddItemOnClick} tokenRemoval={this.removeToken} />

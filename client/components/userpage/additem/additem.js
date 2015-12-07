@@ -3,6 +3,7 @@ var ReactDOM = require('react-dom');
 var TypeItem = require('./typeitem.js');
 var TypeCondition = require('./typecondition.js');
 var FireBaseUtils = require('../../../utils/helpers.js');
+var DummyData = require("../../../utils/dummydata.js");
 
 var AddItem = React.createClass({
 

@@ -10,7 +10,7 @@ var TypeItem = React.createClass({
   },
 
   setClothes: function() {
-    var itemType = "clothes";
+    var itemType = "Clothes";
 
     $("#type-clothes").addClass("inventory-typeItem-clicked");
     $("#type-clothes-text").addClass("inventory-typeItem-clicked-text");
@@ -25,7 +25,7 @@ var TypeItem = React.createClass({
   },
 
   setAccessories: function() {
-    var itemType = "accessories";
+    var itemType = "Accessories";
 
     $("#type-accessories").addClass("inventory-typeItem-clicked");
     $("#type-accessories-text").addClass("inventory-typeItem-clicked-text");
@@ -40,7 +40,7 @@ var TypeItem = React.createClass({
   },
 
   setShoes: function() {
-    var itemType = "shoes";
+    var itemType = "Shoes";
 
     $("#type-shoes").addClass("inventory-typeItem-clicked");
     $("#type-shoes-text").addClass("inventory-typeItem-clicked-text");
@@ -63,13 +63,13 @@ var TypeItem = React.createClass({
   render: function() {
     var typeDescription;
     switch(this.state.descriptionShow) {
-      case "clothes":
+      case "Clothes":
         typeDescription = "tops, shirts, tanktops, bottoms, jackets, outerwear";
         break;
-      case "accessories":
+      case "Accessories":
         typeDescription = "bags, necklaces, earrings, bracelets, hats, wallets";
         break;
-      case "shoes":
+      case "Shoes":
         typeDescription = "boots, high heels, sneakers, flats, sandals";
         break;
     }

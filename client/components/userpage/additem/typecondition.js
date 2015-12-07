@@ -10,7 +10,7 @@ var TypeCondition = React.createClass({
   },
 
   setNew: function() {
-    var typeConditionState = "new";
+    var typeConditionState = "New";
 
     $("#type-new").addClass("inventory-typeItem-clicked");
     $("#type-new-text").addClass("inventory-typeItem-clicked-text");
@@ -25,7 +25,7 @@ var TypeCondition = React.createClass({
   },
 
   setLikeNew: function() {
-    var typeConditionState = "like new";
+    var typeConditionState = "Like New";
 
     $("#type-likeNew").addClass("inventory-typeItem-clicked");
     $("#type-likeNew-text").addClass("inventory-typeItem-clicked-text");
@@ -40,7 +40,7 @@ var TypeCondition = React.createClass({
   },
 
   setGentlyWorn: function() {
-    var typeConditionState = "gently worn";
+    var typeConditionState = "Gently Worn";
 
     $("#type-gentlyWorn").addClass("inventory-typeItem-clicked");
     $("#type-gentlyWorn-text").addClass("inventory-typeItem-clicked-text");

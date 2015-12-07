@@ -2,7 +2,7 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var ClosetTable = require('./closet-table');
 var ClosetImage = require('./closet-image');
-
+var DummyData = require("../../../utils/dummydata.js");
 var ClosetHeader = React.createClass({
 
   getInitialState: function() {
@@ -14,13 +14,16 @@ var ClosetHeader = React.createClass({
 
   componentWillMount: function() {
     var keyIndex = 0;
+    var localInventory = window.localStorage.getItem('inventory');
 
     for(var key in this.state.items) {
       this.state.items[key]['key'] = keyIndex;
       keyIndex++; 
     }
 
-    this.setState({ items: this.state.items });
+    if(JSON.parse(localInventory)) {
+      this.setState({ items: DummyData.concat([JSON.parse(localInventory)]) });
+    }
   },
 
   changeToTable: function() {
@@ -34,15 +37,17 @@ var ClosetHeader = React.createClass({
   render: function() {
   var pageView;
 
-  switch(this.state.viewStyle) {
-    case "table":
-      pageView = <ClosetTable data={this.state.items} />
-      break;
-    case "image":
-      pageView = this.state.items.map(function(item, i) {
-        return <ClosetImage data={item} key={i} />;
-      });
-      break;
+  if(this.state.items) {
+    switch(this.state.viewStyle) {
+      case "table":
+        pageView = <ClosetTable data={this.state.items} />;
+        break;
+      case "image":
+        pageView = this.state.items.map(function(item, i) {
+          return <ClosetImage data={item} key={i} />;
+        });
+        break;
+    }
   }
 
   return (
