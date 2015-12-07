@@ -15,13 +15,18 @@ var ClosetHeader = React.createClass({
     var keyIndex = 0;
     var localInventory = window.localStorage.getItem("inventory");
 
-    for(var key in this.state.items) {
-      this.state.items[key]['key'] = keyIndex;
-      keyIndex++; 
-    }
-
     if(JSON.parse(localInventory)) {
-      this.setState({ items: JSON.parse(localInventory) });
+      this.setState({ items: JSON.parse(localInventory) }, function() {
+        for(var key in this.state.items) {
+          this.state.items[key]['key'] = keyIndex;
+          keyIndex++; 
+        }
+      });
+    } else {
+      for(var key in this.state.items) {
+        this.state.items[key]['key'] = keyIndex;
+        keyIndex++; 
+      }
     }
   },
 
