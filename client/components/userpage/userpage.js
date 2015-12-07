@@ -38,9 +38,19 @@ var Userpage = React.createClass({
       price: "100.00"
     }
 
+    var dummyData4 = {
+      type: "accessories",
+      condition: "like new",
+      image: "http://thecarry.com/wp-content/uploads/2013/12/EmbossedLeatherLineZipWalletBlackPatternB3_1024x1024.jpg",
+      brand: "Commes Des Garcons",
+      headline: "Leather Zip Wallet",
+      color: "Black",
+      price: "70.00"
+    }
+
     return {
       pageKey: "closet",
-      items: [dummyData1, dummyData2, dummyData3]
+      items: [dummyData1, dummyData2, dummyData3, dummyData4]
     }
   },
 
