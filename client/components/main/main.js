@@ -4,8 +4,10 @@ var Homepage = require('../homepage/homepage.js');
 var Userpage = require('../userpage/userpage.js');
 var FireBaseUtils = require('../../utils/helpers.js');
 
-var Main = React.createClass({
 
+window.React = React;
+
+var Main = React.createClass({
   getInitialState: function() {
     return {
       hasToken: false,

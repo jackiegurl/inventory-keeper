@@ -4,8 +4,6 @@ var Header = require("./header.js");
 var Closet = require("./closet/closet.js");
 var AddItem = require("./additem/additem.js");
 var DummyData = require("../../utils/dummydata.js");
-var Firebase = require("firebase");
-
 var jwtName = window.localStorage.getItem('access_token');
 
 var Userpage = React.createClass({
