@@ -456,3 +456,25 @@ table {
   text-transform: uppercase;
   font-weight: 600;
 }
+
+.center-icon {
+  cursor: pointer;
+  position: relative;
+  left: 12px;
+}
+
+.center-icon .show-item-picture {
+  position: absolute;
+  display: none;
+}
+
+.center-icon:hover .show-item-picture {
+  display: block;
+  float: initial;
+}
+
+.show-item-picture-properties {
+  width: 140%;
+  height: auto;
+  border: 1px solid #999;
+}
