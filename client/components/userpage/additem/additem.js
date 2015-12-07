@@ -2,7 +2,7 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var TypeItem = require('./typeitem.js');
 var TypeCondition = require('./typecondition.js');
-var TypeImage = require('./typeimage.js')
+var FireBaseUtils = require('../../../utils/helpers.js');
 
 var AddItem = React.createClass({
 
@@ -46,6 +46,8 @@ var AddItem = React.createClass({
         brand: this.state.brand,
         image: this.state.image,
         headline: this.state.headline,
+        condition: this.state.condition,
+        type: this.state.type,
         color: this.state.color,
         price: this.state.price
       }
@@ -90,13 +92,17 @@ var AddItem = React.createClass({
               <div className="inventory-col-padding row">
                 <div className="col-md-4">
                   <div className="inventory-leftcol-text">
-                    Item Image
+                    Item Image URL
+                    <div className="inventory-type-small-description">
+                    White backgrounds look the best :)
+                    </div>
                   </div>
                 </div>
 
                 <div className="col-md-8">
                   <div className="inventory-rightcol-text">
-                    <TypeImage handleImage={this.handleImageInput} />
+                    <textarea type="text" 
+                    className="inventory-textarea" ref="itemImage" required/>
                  </div>
                 </div>
               </div>

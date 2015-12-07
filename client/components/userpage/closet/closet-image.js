@@ -23,9 +23,6 @@ var ClosetImage = React.createClass({
                 <div className="closet-image-text">
                   {this.props.data.headline}
                 </div>
-
-                <div className="padding-between"> </div>
-
                 <div className="closet-image-text">
                   {this.props.data.color}
                 </div>
