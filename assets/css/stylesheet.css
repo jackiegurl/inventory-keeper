@@ -364,3 +364,14 @@ table {
 .inventory-table-td {
   width: 33.33%;
 }
+
+.closet-header-container {
+  text-align: center;
+}
+
+.closet-header-links {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0% 5% 0% 5%;
+}
