@@ -437,8 +437,12 @@ table {
 
 .closet-image-text {
   color: #fff;
-  font-size: 12px;
-  letter-spacing: 0.5px;
+  font-size: 0.7em;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
   padding: 0.2%;
+}
+
+.padding-between {
+  margin: 1%;
 }

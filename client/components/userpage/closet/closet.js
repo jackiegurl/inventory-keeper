@@ -25,9 +25,7 @@ var ClosetHeader = React.createClass({
 
   switch(this.state.viewStyle) {
     case "table":
-      pageView = this.state.items.map(function(item, i) {
-        return <ClosetTable data={item} key={i} />;
-      });
+      pageView = <ClosetTable data={this.state.items} />
       break;
     case "image":
       pageView = this.state.items.map(function(item, i) {

@@ -13,7 +13,7 @@ var Userpage = React.createClass({
       condition: "new",
       image: "http://www.patagonia.com/tsimages/25455_WDCR.fpx?wid=750&hei=750&bgcolor=FFFFFF&ftr=6&cvt=jpeg",
       brand: "Patagonia",
-      headline: "Snap-T Pullover in Wild Desert",
+      headline: "Snap-T Pullover",
       color: "Red",
       price: "70.00"
     };
