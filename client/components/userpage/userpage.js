@@ -10,13 +10,17 @@ var Userpage = React.createClass({
 
 
   getInitialState: function() {
-    //there are true and false statements on each component so the page knows which one to render
-    var self = this;
+    //there are true and false statements on each component so the page knows which one to render\
+    var inventory = window.localStorage.getItem("inventory");
+    if(!JSON.parse(inventory)) {
+      window.localStorage.setItem("inventory", JSON.stringify(DummyData));
+    } else if(JSON.parse(inventory)) {
+      inventory = JSON.parse(inventory);
+    }
 
     return {
       pageKey: "closet",
-      items: DummyData,
-      userName: jwtName
+      items: inventory
     }
   },
 
@@ -43,14 +47,14 @@ var Userpage = React.createClass({
   },
 
   handleSubmission: function(input) {
-    var currentStorage = window.localStorage.setItem("inventory", JSON.stringify(this.state.items.concat([input])));
+    console.log(this.state.items, 'thisstate')
+    window.localStorage.setItem("inventory", JSON.stringify(this.state.items.concat([input])));
     var setStorage = window.localStorage.getItem("inventory");
 
     this.setState({ 
       items: JSON.parse(setStorage),
       pageKey: "closet" 
     }, function() { 
-      console.log(input, "handleSubmission")
       window.localStorage.setItem("inventory", JSON.stringify(this.state.items));
     });
   },

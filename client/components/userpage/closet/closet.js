@@ -2,7 +2,6 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var ClosetTable = require('./closet-table');
 var ClosetImage = require('./closet-image');
-var DummyData = require("../../../utils/dummydata.js");
 var ClosetHeader = React.createClass({
 
   getInitialState: function() {
