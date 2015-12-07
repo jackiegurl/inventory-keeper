@@ -1,17 +1,22 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-var Product = React.createClass({
+var ClosetTable = React.createClass({
 
   getInfoOnViewSwitch: function(input) {
-    console.log(input, "on product");
+    console.log(input, "on ClosetTable");
   },
+
+  componentDidMount: function() {
+    console.log(this.props.data, "in closetTable")
+  }, 
 
   render: function() {
     return (
       <div passInfo={this.getInfoOnViewSwitch}>
         <div className="inventory-col-padding">
           <div className="inventory-leftcol-text">
+          CLOSET TABLE
             {this.props.data.brand}
             {this.props.data.image}
             {this.props.data.headline}
@@ -27,4 +32,4 @@ var Product = React.createClass({
   }
 });
 
-module.exports = Product;
+module.exports = ClosetTable;

@@ -1,7 +1,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Header = require('./header.js');
-var ClosetHeader = require('./closet/closet-header.js');
+var Closet = require('./closet/closet.js');
 var Product = require('./closet/product.js');
 var AddItem = require('./additem/additem.js');
 
@@ -45,17 +45,11 @@ var Userpage = React.createClass({
   },
 
   render: function() {
-    var closetStructure = this.state.items.map(function(item, i) {
-      return <Product data={item} key={i} />
-    });
-
     var pageRender;
-    var pageHeader;
 
     switch (this.state.pageKey) {
       case "closet":
-        pageHeader = <ClosetHeader />;
-        pageRender = closetStructure;
+        pageRender = <Closet data={this.state.items} />;
         break;
       case "addItem":
         pageRender = <AddItem getSubmission={this.handleSubmission} />;
@@ -71,13 +65,12 @@ var Userpage = React.createClass({
         </div>
 
         <div className="userpage-main-content">
-          {pageHeader}
           {pageRender}
         </div>
       </div>
     )
   }
-
+  
 });
 
 module.exports = Userpage;
