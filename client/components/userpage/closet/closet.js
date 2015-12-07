@@ -21,7 +21,7 @@ var ClosetHeader = React.createClass({
   },
 
   render: function() {
-  var pageView
+  var pageView;
 
   switch(this.state.viewStyle) {
     case "table":
