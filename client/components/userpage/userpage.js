@@ -2,7 +2,6 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var Header = require('./header.js');
 var Closet = require('./closet/closet.js');
-var Product = require('./closet/product.js');
 var AddItem = require('./additem/additem.js');
 
 var Userpage = React.createClass({

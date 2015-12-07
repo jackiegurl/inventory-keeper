@@ -81,17 +81,17 @@ var TypeItem = React.createClass({
             <tr>
               <td className="inventory-table-td">
                 <div id="type-clothes" onClick={this.setClothes}>
-                  <div id="type-clothes-text" className="inventory-type-title">Clothes</div>
+                  <div id="type-clothes-text" className="inventory-type-title"><a>Clothes</a></div>
                 </div>
               </td>
               <td className="inventory-table-td">
                 <div id="type-accessories" className="inventory-type" onClick={this.setAccessories}>
-                  <div id="type-accessories-text" className="inventory-type-title">Accessories</div>
+                  <div id="type-accessories-text" className="inventory-type-title"><a>Accessories</a></div>
                 </div>
               </td>
               <td className="inventory-table-td">
                 <div id="type-shoes" className="inventory-type-lastbox" onClick={this.setShoes}>
-                  <div id="type-shoes-text" className="inventory-type-title">Shoes</div>
+                  <div id="type-shoes-text" className="inventory-type-title"><a>Shoes</a></div>
                 </div>
               </td>
             </tr>

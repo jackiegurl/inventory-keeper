@@ -40,15 +40,17 @@ var ClosetHeader = React.createClass({
     <div>
       <div className="closet-header-container">
         <div>
-          <span className="closet-header-links" onClick={this.changeToTable}>
+          <a className="closet-header-links" onClick={this.changeToTable}>
             Table View
-          </span>
-          <span className="closet-header-links" onClick={this.changeToImage}>
+          </a>
+          <a className="closet-header-links" onClick={this.changeToImage}>
             Image View
-          </span>
+          </a>
         </div>
       </div>
-      {pageView}
+      <div className="pageview-container">
+        {pageView}
+      </div>
     </div>
   )
  }
