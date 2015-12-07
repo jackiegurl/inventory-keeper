@@ -396,9 +396,49 @@ table {
 }
 
 .closet-image-view-boxsize {
-  background-color: #eee;
+  background-color: #fff;
   width: 22%;
   height: 200px;
   margin: 1%;
   float: left;
+}
+
+.closet-image-view-boxsize:hover {
+  cursor: pointer;
+  background-color: rgba(0,0,0);
+}
+
+.closet-image-view-info {
+  height: inherit;
+  width: inherit;
+  position: absolute;
+  display: block;
+}
+
+.closet-image-view-info .closet-image-view-info-text {
+  display: none;
+}
+
+.closet-image-view-info:hover .closet-image-view-info-text{
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: block;
+}
+
+.closet-image-view-info .closet-image-view-info-text:hover {
+  display: block;
+}
+
+.closet-image-container {
+  text-align: center;
+  padding-top: 15%;
+}
+
+.closet-image-text {
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 0.2%;
 }

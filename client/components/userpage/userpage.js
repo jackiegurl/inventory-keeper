@@ -31,9 +31,9 @@ var Userpage = React.createClass({
     var dummyData3 = {
       type: "shoes",
       condition: "gently worn",
-      image: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSpZBQ77lcbsdhuKRf6dV2DFLGlQ6bdk2pSQnlU4HGK-J2SN9Tu",
-      brand: "Maison Margiela",
-      headline: "High Heel Sandal",
+      image: "http://d3pfrs3be80x9y.cloudfront.net/media/catalog/product/cache/7/image/x900/17f82f742ffe127f42dca9de82fb58b1/1/E/1EX113-900_A_54377_3_2.jpg",
+      brand: "Acne Studios",
+      headline: "High Heel Boots",
       color: "Black",
       price: "100.00"
     }

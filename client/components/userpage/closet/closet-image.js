@@ -4,16 +4,43 @@ var ReactDOM = require('react-dom');
 var ClosetImage = React.createClass({
 
   render: function() {
+    var backgroundImage = {
+      "backgroundImage": "url(" + this.props.data.image + ")",
+      "backgroundPosition": "center",
+      "backgroundSize": "85%",
+      "backgroundRepeat": "no-repeat"
+    };
+
     return (
       <div className="closet-image-view-container">
-        <div className="closet-image-view-boxsize">
-          {this.props.data.brand}
-          {this.props.data.image}
-          {this.props.data.headline}
-          {this.props.data.color}
-          {this.props.data.condition}
-          {this.props.data.type}
-          {this.props.data.price}
+        <div className="closet-image-view-boxsize" style={backgroundImage}>
+          <div className="closet-image-view-info">
+            <span className="closet-image-view-info-text">
+              <div className="closet-image-container">
+                <div className="closet-image-text">
+                  {this.props.data.brand}
+                </div>
+                <div className="closet-image-text">
+                  {this.props.data.headline}
+                </div>
+
+                <div></div>
+
+                <div className="closet-image-text">
+                  {this.props.data.color}
+                </div>
+                <div className="closet-image-text">
+                  {this.props.data.condition}
+                </div>
+                <div className="closet-image-text">
+                  {this.props.data.type}
+                </div>
+                <div className="closet-image-text">
+                  {this.props.data.price}
+                </div>
+              </div>
+            </span>
+          </div>
         </div>
       </div>
     )
