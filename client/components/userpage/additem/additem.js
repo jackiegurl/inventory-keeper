@@ -31,6 +31,8 @@ var AddItem = React.createClass({
   },
 
   submitItemInfo: function(event) {
+    event.preventDefault();
+    
     this.setState({
       brand: this.refs.itemBrand.value,
       image: this.refs.itemImage.value,

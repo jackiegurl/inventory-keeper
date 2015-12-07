@@ -35,12 +35,12 @@ var Userpage = React.createClass({
 
   handleSubmission: function(input) {
     this.setState({ items: this.state.items.concat([input]) }, function() {
-      console.log(this.state.items, 'should be array');
+      this.setState({ pageKey: "addItem" });
     });
   },
-  
+
   render: function() {
-    var closetStructure = this.state.items.map(function(item,i) {
+    var closetStructure = this.state.items.map(function(item, i) {
       return <Closet data={item} key={i} />
     });
 
@@ -49,6 +49,7 @@ var Userpage = React.createClass({
     switch (this.state.pageKey) {
       case "closet":
         pageRender = closetStructure;
+        console.log(closetStructure, 'in switch statement')
         break;
       case "addItem":
         pageRender = <AddItem getSubmission={this.handleSubmission} />;

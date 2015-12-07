@@ -4,7 +4,7 @@ var ReactDOM = require('react-dom');
 var Closet = React.createClass({
 
   componentDidMount: function() {
-    console.log(this.props.data.name, "from closet");
+    console.log(this.props.data, "from closet");
   },
 
   render: function() {
