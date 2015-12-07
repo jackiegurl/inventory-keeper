@@ -2,6 +2,7 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var TypeItem = require('./typeitem.js');
 var TypeCondition = require('./typecondition.js');
+var TypeImage = require('./typeimage.js')
 
 var AddItem = React.createClass({
 
@@ -61,127 +62,129 @@ var AddItem = React.createClass({
     this.setState({ type: typeInput });
   },
 
+  handleImageInput: function(input) {
+    console.log(input);
+  },
+
   render: function() {
     return ( 
       <div>
-        <form onSubmit={this.submitItemInfo}>
+        <form onSubmit={this.props.getSubmission}>
           <div className="inventory-content">
             <div className="userpage-header">Add an Item to your Closet</div>
-          <div className="inventory-input-box">
-
-            <div className="inventory-col-padding row">
-              <div className="col-md-4">
-                <div className="inventory-leftcol-text">
-                  Type Of Item
+            <div className="inventory-input-box">
+              <div className="inventory-col-padding row">
+                <div className="col-md-4">
+                  <div className="inventory-leftcol-text">
+                    Type Of Item
+                  </div>
                 </div>
-              </div>
 
-              <div className="col-md-8">
-                <div className="inventory-rightcol-text">
-                  <TypeItem itemTypeSelection={this.itemTypeSelection} />
-                </div>
-              </div>
-            </div>
-
-            <div className="inventory-col-padding row">
-              <div className="col-md-4">
-                <div className="inventory-leftcol-text">
-                  Item Image
-                </div>
-              </div>
-
-              <div className="col-md-8">
-                <div className="inventory-rightcol-text">
-                  <input type="file" name="pic" accept="image/*"
-                  ref="itemImage" required/>
-                </div>
-              </div>
-            </div>
-
-            <div className="inventory-col-padding row">
-              <div className="col-md-4">
-                <div className="inventory-leftcol-text">
-                  Item Brand
-                </div>
-              </div>
-
-              <div className="col-md-8">
-                <div className="inventory-rightcol-text">
-                  <input type="text" className="inventory-text-price"
-                  id="inv-brand" onChange={this.checkInput} ref="itemBrand" required/>
-                </div>
-              </div>
-            </div>
-
-            <div className="inventory-col-padding row">
-              <div className="col-md-4">
-                <div className="inventory-leftcol-text">
-                  Item Headline
-                  <div className="inventory-type-small-description">
-                    i.e
-                    Leather Jacket with Vintage Patches,
-                    Belt with a Britney Spears signature
+                <div className="col-md-8">
+                  <div className="inventory-rightcol-text">
+                    <TypeItem itemTypeSelection={this.itemTypeSelection} />
                   </div>
                 </div>
               </div>
 
-              <div className="col-md-8">
-                <div className="inventory-rightcol-text">
-                  <textarea type="text" 
-                  className="inventory-textarea" ref="itemHeadline" 
-                  id="inv-headline" onChange={this.checkInput} required/>
+              <div className="inventory-col-padding row">
+                <div className="col-md-4">
+                  <div className="inventory-leftcol-text">
+                    Item Image
+                  </div>
                 </div>
-              </div>
-            </div>
 
-            <div className="inventory-col-padding row">
-              <div className="col-md-4">
-                <div className="inventory-leftcol-text">
-                  Item Color
-                </div> 
-              </div>
-
-              <div className="col-md-8">
-                <div className="inventory-rightcol-text">
-                  <input type="text" id="inv-color" className="inventory-text-price" ref="itemColor" onChange={this.checkInput} required/>
-                </div>
-              </div>
-            </div>
-
-            <div className="inventory-col-padding row">
-              <div className="col-md-4">
-                <div className="inventory-leftcol-text">
-                  Item Condition
+                <div className="col-md-8">
+                  <div className="inventory-rightcol-text">
+                    <TypeImage handleImage={this.handleImageInput} />
+                 </div>
                 </div>
               </div>
 
-              <div className="col-md-8">
-                <div className="inventory-rightcol-text">
-                  <TypeCondition itemConditionSelection=
-                  {this.itemConditionSelection} />
+              <div className="inventory-col-padding row">
+                <div className="col-md-4">
+                  <div className="inventory-leftcol-text">
+                    Item Brand
+                  </div>
                 </div>
-              </div>
-            </div>
 
-            <div className="inventory-col-padding row">
-              <div className="col-md-4">
-                <div className="inventory-leftcol-text">
-                  Item Price
+                <div className="col-md-8">
+                  <div className="inventory-rightcol-text">
+                    <input type="text" className="inventory-text-price"
+                    id="inv-brand" onChange={this.checkInput} ref="itemBrand" required/>
+                  </div>
                 </div>
               </div>
 
-              <div className="col-md-8">
-                <div className="inventory-rightcol-text">
-                  <input type="number" id="inv-number" min="0.01" max="9999" step="0.01" className="inventory-text-price" ref="itemPrice" onChange={this.checkInput} required/>
+              <div className="inventory-col-padding row">
+                <div className="col-md-4">
+                  <div className="inventory-leftcol-text">
+                    Item Headline
+                    <div className="inventory-type-small-description">
+                      i.e
+                      Leather Jacket with Vintage Patches,
+                      Belt with a Britney Spears signature
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-md-8">
+                  <div className="inventory-rightcol-text">
+                    <textarea type="text" 
+                    className="inventory-textarea" ref="itemHeadline" 
+                    id="inv-headline" onChange={this.checkInput} required/>
+                  </div>
                 </div>
               </div>
-            </div>
+
+              <div className="inventory-col-padding row">
+                <div className="col-md-4">
+                  <div className="inventory-leftcol-text">
+                    Item Color
+                  </div> 
+                </div>
+
+                <div className="col-md-8">
+                  <div className="inventory-rightcol-text">
+                    <input type="text" id="inv-color" className="inventory-text-price" ref="itemColor" onChange={this.checkInput} required/>
+                  </div>
+                </div>
+              </div>
+
+              <div className="inventory-col-padding row">
+                <div className="col-md-4">
+                  <div className="inventory-leftcol-text">
+                    Item Condition
+                  </div>
+                </div>
+
+                <div className="col-md-8">
+                  <div className="inventory-rightcol-text">
+                    <TypeCondition itemConditionSelection=
+                    {this.itemConditionSelection} />
+                  </div>
+                </div>
+              </div>
+
+              <div className="inventory-col-padding row">
+                <div className="col-md-4">
+                  <div className="inventory-leftcol-text">
+                    Item Price
+                  </div>
+                </div>
+
+                <div className="col-md-8">
+                  <div className="inventory-rightcol-text">
+                    <input type="number" id="inv-number" min="0.01" max="9999" step="0.01" className="inventory-text-price" ref="itemPrice" onChange={this.checkInput} required/>
+                  </div>
+                </div>
+              </div>
             <button id="submit-to-check" className="inventory-submit"
-            onSubmit={this.props.getSubmission}>Submit</button>
+            onClick={this.submitItemInfo}>Submit</button>
           </div>
         </div>
-       </form>
-      </div>
+      </form>
+    </div>
     )
   }
 });

@@ -6,7 +6,8 @@ var Homepage = React.createClass({
   getInitialState: function() {
     return {
       popUp: false,
-      tokenCreation: false
+      tokenCreation: false,
+      userName: null
     }
   },
 
@@ -18,8 +19,12 @@ var Homepage = React.createClass({
     //store session 
     window.localStorage.setItem('access_token', input);
     //bubbles up to the parent to tell it that a token has been created
-    this.setState({ tokenCreation: true });
-    this.props.tokenCreated(this.state.tokenCreation);
+    this.setState({ 
+      tokenCreation: true,
+      userName: input 
+    }, function() {
+      this.props.tokenCreated(this.state.tokenCreation, input);
+    });
   },
 
   render: function() {

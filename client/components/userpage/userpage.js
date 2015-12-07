@@ -1,13 +1,16 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var Header = require('./header.js');
-var Closet = require('./closet/closet.js');
-var AddItem = require('./additem/additem.js');
+var React = require("react");
+var ReactDOM = require("react-dom");
+var Header = require("./header.js");
+var Closet = require("./closet/closet.js");
+var AddItem = require("./additem/additem.js");
+var FireBaseUtils = require("../../utils/helpers.js");
 
 var Userpage = React.createClass({
 
   getInitialState: function() {
     //there are true and false statements on each component so the page knows which one to render
+    var jwtName = window.localStorage.getItem('access_token');
+
     var dummyData1 = {
       type: "clothes",
       condition: "new",
@@ -50,8 +53,13 @@ var Userpage = React.createClass({
 
     return {
       pageKey: "closet",
-      items: [dummyData1, dummyData2, dummyData3, dummyData4]
+      items: [dummyData1, dummyData2, dummyData3, dummyData4],
+      userName: jwtName
     }
+  },
+
+  componentWillMount: function() {
+    FireBaseUtils.pushInventory(this.state.userName, this.state.items);
   },
 
   toggleStates: function() {

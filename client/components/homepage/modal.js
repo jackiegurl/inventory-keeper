@@ -1,5 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var fireBaseUtils = require('../../utils/helpers.js');
 
 var Modal = React.createClass({
   
@@ -7,7 +8,8 @@ var Modal = React.createClass({
     e.preventDefault();
     //grabs the input value
     var userName = this.refs.inputName.value;
-    //bubbles it to the parent
+    //sends username to firebase
+    fireBaseUtils.setUsername(userName);
     this.props.getUserName(userName);
     //clears the input text on submission
     this.refs.inputName.value = '';
