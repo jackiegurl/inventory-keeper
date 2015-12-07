@@ -121,7 +121,7 @@ table {
 
 .homepage-main-content {
   position: relative;
-  margin: 150px 150px 150px 150px;
+  margin: 150px;
   color: #fff;
 }
 
@@ -172,7 +172,7 @@ table {
   background-color: rgba(255, 255, 255, 0.3);
   top: 150px;
   width: 250px;
-  padding: 5px 5px 5px 5px;
+  padding: 5px;
   border: 2px solid #fff;
   border-radius: 5px;
   margin-top: 2%;
@@ -300,14 +300,20 @@ table {
   width: 100%;
   height: 58px;
   border: 1px solid #333;
-  padding: 8px 8px 8px 8px;
+  padding: 8px;
+}
+
+.inventory-textarea-input {
+  width: 100%;
+  border: 1px solid #333;
+  padding: 8px;
 }
 
 .inventory-textarea-description {
   width: 100%;
   height: 120px;
   border: 1px solid #333;
-  padding: 8px 8px 8px 8px;
+  padding: 8px;
 }
 
 .inventory-submit {
@@ -357,7 +363,7 @@ table {
 .inventory-text-price {
   width: 100%;
   border: 1px solid #333;
-  padding: 5px 5px 5px 5px;
+  padding: 5px;
 }
 
 .inventory-table {
@@ -431,7 +437,7 @@ table {
 
 .closet-image-container {
   text-align: center;
-  padding-top: 15%;
+  padding-top: 18%;
 }
 
 .closet-image-text {

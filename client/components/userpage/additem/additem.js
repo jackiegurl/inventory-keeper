@@ -101,8 +101,8 @@ var AddItem = React.createClass({
 
                 <div className="col-md-8">
                   <div className="inventory-rightcol-text">
-                    <textarea type="text" 
-                    className="inventory-textarea" ref="itemImage" required/>
+                    <input type="text" 
+                    className="inventory-textarea-input" ref="itemImage" required/>
                  </div>
                 </div>
               </div>
