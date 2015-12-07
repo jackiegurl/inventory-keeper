@@ -34,7 +34,6 @@ var Userpage = React.createClass({
 
   removeToken: function() {
     //removes the current token and redirects to homepage
-    window.localStorage.clear();
     this.props.tokenRemoval();
   },
 
