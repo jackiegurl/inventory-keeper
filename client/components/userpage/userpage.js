@@ -1,8 +1,9 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Header = require('./header.js');
-var Product = require('./product.js');
-var AddItem = require('./additem/additem.js')
+var ClosetHeader = require('./closet/closet-header.js');
+var Product = require('./closet/product.js');
+var AddItem = require('./additem/additem.js');
 
 var Userpage = React.createClass({
 
@@ -49,9 +50,11 @@ var Userpage = React.createClass({
     });
 
     var pageRender;
+    var pageHeader;
 
     switch (this.state.pageKey) {
       case "closet":
+        pageHeader = <ClosetHeader />;
         pageRender = closetStructure;
         break;
       case "addItem":
@@ -68,6 +71,7 @@ var Userpage = React.createClass({
         </div>
 
         <div className="userpage-main-content">
+          {pageHeader}
           {pageRender}
         </div>
       </div>
