@@ -30,7 +30,7 @@ var ClosetImage = React.createClass({
                   {this.props.data.color}
                 </div>
                 <div className="closet-image-text">
-                  {this.props.data.condition}
+                  {this.props.data.condition} / SKU #{this.props.data.key}
                 </div>
                 <div className="closet-image-text">
                   {this.props.data.type}
