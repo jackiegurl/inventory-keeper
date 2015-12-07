@@ -32,7 +32,7 @@ var AddItem = React.createClass({
 
   submitItemInfo: function(event) {
     event.preventDefault();
-    
+
     this.setState({
       brand: this.refs.itemBrand.value,
       image: this.refs.itemImage.value,
@@ -68,8 +68,8 @@ var AddItem = React.createClass({
     return ( 
       <div>
         <form onSubmit={this.submitItemInfo}>
-        <div className="inventory-content">
-          <div className="userpage-header">Add an Item to your Closet</div>
+          <div className="inventory-content">
+            <div className="userpage-header">Add an Item to your Closet</div>
           <div className="inventory-input-box">
 
             <div className="inventory-col-padding row">

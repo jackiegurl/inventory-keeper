@@ -1,7 +1,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Header = require('./header.js');
-var Closet = require('./closet.js');
+var Product = require('./product.js');
 var AddItem = require('./additem/additem.js')
 
 var Userpage = React.createClass({
@@ -16,7 +16,10 @@ var Userpage = React.createClass({
 
   toggleStates: function() {
     //switches on and off width add item and closet
-    this.setState({ goToCloset: !this.state.goToCloset, goToAddItem: !this.state.goToCloset })
+    this.setState({ 
+      goToCloset: !this.state.goToCloset, 
+      goToAddItem: !this.state.goToCloset 
+    });
   },
 
   removeToken: function() {
@@ -42,7 +45,7 @@ var Userpage = React.createClass({
 
   render: function() {
     var closetStructure = this.state.items.map(function(item, i) {
-      return <Closet data={item} key={i} />
+      return <Product data={item} key={i} />
     });
 
     var pageRender;
@@ -50,7 +53,6 @@ var Userpage = React.createClass({
     switch (this.state.pageKey) {
       case "closet":
         pageRender = closetStructure;
-        console.log(closetStructure, 'in switch statement')
         break;
       case "addItem":
         pageRender = <AddItem getSubmission={this.handleSubmission} />;
