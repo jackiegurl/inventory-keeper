@@ -64,23 +64,25 @@ var TypeCondition = React.createClass({
     return (
       <div onChange={this.props.itemConditionSelection}>
         <table className="inventory-table">
-          <tr>
-            <td className="inventory-table-td">
-              <div id="type-new" onClick={this.setNew}>
-                <div id="type-new-text" className="inventory-type-title">New</div>
-              </div>
-            </td>
-            <td className="inventory-table-td">
-              <div id="type-likeNew" className="inventory-type" onClick={this.setLikeNew}>
-                <div id="type-likeNew-text" className="inventory-type-title">Like New</div>
-              </div>
-            </td>
-            <td className="inventory-table-td">
-              <div id="type-gentlyWorn" className="inventory-type-lastbox" onClick={this.setGentlyWorn}>
-                <div id="type-gentlyWorn-text" className="inventory-type-title">Gently Worn</div>
-              </div>
-            </td>
-          </tr>
+          <tbody>
+            <tr>
+              <td className="inventory-table-td">
+                <div id="type-new" onClick={this.setNew}>
+                  <div id="type-new-text" className="inventory-type-title">New</div>
+                </div>
+              </td>
+              <td className="inventory-table-td">
+                <div id="type-likeNew" className="inventory-type" onClick={this.setLikeNew}>
+                  <div id="type-likeNew-text" className="inventory-type-title">Like New</div>
+                </div>
+              </td>
+              <td className="inventory-table-td">
+                <div id="type-gentlyWorn" className="inventory-type-lastbox" onClick={this.setGentlyWorn}>
+                  <div id="type-gentlyWorn-text" className="inventory-type-title">Gently Worn</div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
     )

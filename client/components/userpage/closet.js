@@ -3,15 +3,14 @@ var ReactDOM = require('react-dom');
 
 var Closet = React.createClass({
 
+  componentDidMount: function() {
+    console.log(this.props.data.name, "from closet");
+  },
+
   render: function() {
     return (
       <div className='container'>
-        <div className='item-name'>
-          {this.props.data}
-        </div>
-        
-        <div className='item-brand'>
-        </div>
+        hey there
       </div>
     )
   }

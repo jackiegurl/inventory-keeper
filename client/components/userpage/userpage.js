@@ -33,16 +33,12 @@ var Userpage = React.createClass({
     this.setState({ pageKey: "addItem" });
   },
 
-  componentWillMount: function() {
-    console.log(this.state.items, 'component did mount');
-  },
-
   handleSubmission: function(input) {
     this.setState({ items: this.state.items.concat([input]) }, function() {
       console.log(this.state.items, 'should be array');
     });
   },
-
+  
   render: function() {
     var closetStructure = this.state.items.map(function(item,i) {
       return <Closet data={item} key={i} />
@@ -52,7 +48,7 @@ var Userpage = React.createClass({
 
     switch (this.state.pageKey) {
       case "closet":
-        pageRender = <Closet />
+        pageRender = closetStructure;
         break;
       case "addItem":
         pageRender = <AddItem getSubmission={this.handleSubmission} />;
