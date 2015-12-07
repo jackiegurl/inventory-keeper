@@ -34,9 +34,10 @@ var Userpage = React.createClass({
   },
 
   handleSubmission: function(input) {
-    this.setState({ items: this.state.items.concat([input]) }, function() {
-      this.setState({ pageKey: "addItem" });
-    });
+    this.setState({ 
+      items: this.state.items.concat([input]),
+      pageKey: "closet" 
+    }, function() { this.forceUpdate(); });
   },
 
   render: function() {
