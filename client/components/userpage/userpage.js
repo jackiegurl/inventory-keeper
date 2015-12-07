@@ -8,9 +8,39 @@ var Userpage = React.createClass({
 
   getInitialState: function() {
     //there are true and false statements on each component so the page knows which one to render
+    var dummyData1 = {
+      type: "clothes",
+      condition: "new",
+      image: "http://www.patagonia.com/tsimages/25455_WDCR.fpx?wid=750&hei=750&bgcolor=FFFFFF&ftr=6&cvt=jpeg",
+      brand: "Patagonia",
+      headline: "Snap-T Pullover in Wild Desert",
+      color: "Red",
+      price: "70.00"
+    };
+
+    var dummyData2 = {
+      type: "acessories",
+      condition: "like new",
+      image: "http://media.tiffany.com/is/image/Tiffany/EcomItemL2/atlasopen-hinged-bangle-30480562_926301_ED_M.jpg",
+      brand: "Tiffany & Co",
+      headline: "Atlas Hinted Bangle",
+      color: "Rose Gold",
+      price: "50.00"
+    };
+
+    var dummyData3 = {
+      type: "shoes",
+      condition: "gently worn",
+      image: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSpZBQ77lcbsdhuKRf6dV2DFLGlQ6bdk2pSQnlU4HGK-J2SN9Tu",
+      brand: "Maison Margiela",
+      headline: "High Heel Sandal",
+      color: "Black",
+      price: "100.00"
+    }
+
     return {
       pageKey: "closet",
-      items: []
+      items: [dummyData1, dummyData2, dummyData3]
     }
   },
 

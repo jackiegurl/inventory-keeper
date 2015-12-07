@@ -10,7 +10,6 @@ var ClosetImage = React.createClass({
           {this.props.data.brand}
           {this.props.data.image}
           {this.props.data.headline}
-          {this.props.data.description}
           {this.props.data.color}
           {this.props.data.condition}
           {this.props.data.type}

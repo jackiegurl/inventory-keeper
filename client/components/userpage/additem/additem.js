@@ -11,7 +11,6 @@ var AddItem = React.createClass({
       brand: null,
       image: null,
       headline: null,
-      description: null,
       color: null,
       condition: null,
       price: 0
@@ -37,7 +36,6 @@ var AddItem = React.createClass({
       brand: this.refs.itemBrand.value,
       image: this.refs.itemImage.value,
       headline: this.refs.itemHeadline.value,
-      description: this.refs.itemDescription.value,
       color: this.refs.itemColor.value,
       condition: this.state.condition,
       type: this.state.type,
@@ -47,7 +45,6 @@ var AddItem = React.createClass({
         brand: this.state.brand,
         image: this.state.image,
         headline: this.state.headline,
-        description: this.state.description,
         color: this.state.color,
         price: this.state.price
       }
@@ -133,26 +130,6 @@ var AddItem = React.createClass({
                   <textarea type="text" 
                   className="inventory-textarea" ref="itemHeadline" 
                   id="inv-headline" onChange={this.checkInput} required/>
-                </div>
-              </div>
-            </div>
-
-            <div className="inventory-col-padding row">
-              <div className="col-md-4">
-                <div className="inventory-leftcol-text">
-                  Item Description
-                  <div className="inventory-type-small-description">
-                    i.e. Great dress with normal
-                    wear; perfect for a sunday morning outing
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-md-8">
-                <div className="inventory-rightcol-text">
-                  <textarea type="text" 
-                  className="inventory-textarea-description" id="inv-description"
-                  ref="itemDescription" onChange={this.checkInput} required/>
                 </div>
               </div>
             </div>

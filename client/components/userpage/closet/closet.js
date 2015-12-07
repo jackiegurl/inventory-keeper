@@ -49,7 +49,9 @@ var ClosetHeader = React.createClass({
         </div>
       </div>
       <div className="pageview-container">
-        {pageView}
+        <div className="pageview-padding">
+          {pageView}
+        </div>
       </div>
     </div>
   )

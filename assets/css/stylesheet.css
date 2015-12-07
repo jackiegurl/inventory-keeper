@@ -386,16 +386,19 @@ table {
   margin: 0 auto;
 }
 
+.pageview-padding {
+  margin: 5%;
+}
+
 .closet-image-view-container {
   overflow: hidden;
   display: inline;
 }
 
 .closet-image-view-boxsize {
-  background-color: red;
+  background-color: #eee;
   width: 22%;
   height: 200px;
   margin: 1%;
   float: left;
 }
-
