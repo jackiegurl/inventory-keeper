@@ -5,9 +5,14 @@ var Closet = React.createClass({
 
   render: function() {
     return (
-     <div>
-      Items Go Here
-     </div>
+      <div className='container'>
+        <div className='item-name'>
+          {this.props.data}
+        </div>
+        
+        <div className='item-brand'>
+        </div>
+      </div>
     )
   }
 });

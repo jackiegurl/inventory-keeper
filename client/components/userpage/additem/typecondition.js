@@ -5,13 +5,12 @@ var TypeCondition = React.createClass({
 
   getInitialState: function() {
     return {
-      wornDescriptionShow: ""
+      wornDescriptionShow: null
     }
   },
 
   setNew: function() {
-    this.state.wornDescriptionShow = "new";
-    this.setState({ wornDescriptionShow: this.state.wornDescriptionShow });
+    var typeConditionState = "new";
 
     $("#type-new").addClass("inventory-typeItem-clicked");
     $("#type-new-text").addClass("inventory-typeItem-clicked-text");
@@ -22,12 +21,11 @@ var TypeCondition = React.createClass({
     $("#type-gentlyWorn").removeClass("inventory-typeItem-clicked");
     $("#type-gentlyWorn-text").removeClass("inventory-typeItem-clicked-text");
 
-    this.props.itemConditionSelection(this.state.wornDescriptionShow);
+    this.sendToParent(typeConditionState);
   },
 
   setLikeNew: function() {
-    this.state.wornDescriptionShow = "like new";
-    this.setState({ wornDescriptionShow: this.state.wornDescriptionShow });
+    var typeConditionState = "like new";
 
     $("#type-likeNew").addClass("inventory-typeItem-clicked");
     $("#type-likeNew-text").addClass("inventory-typeItem-clicked-text");
@@ -38,12 +36,11 @@ var TypeCondition = React.createClass({
     $("#type-gentlyWorn").removeClass("inventory-typeItem-clicked");
     $("#type-gentlyWorn-text").removeClass("inventory-typeItem-clicked-text");
 
-    this.props.itemConditionSelection(this.state.wornDescriptionShow);
+    this.sendToParent(typeConditionState);
   },
 
   setGentlyWorn: function() {
-    this.state.wornDescriptionShow = "gently worn";
-    this.setState({ wornDescriptionShow: this.state.wornDescriptionShow });
+    var typeConditionState = "gently worn";
 
     $("#type-gentlyWorn").addClass("inventory-typeItem-clicked");
     $("#type-gentlyWorn-text").addClass("inventory-typeItem-clicked-text");
@@ -54,7 +51,13 @@ var TypeCondition = React.createClass({
     $("#type-new").removeClass("inventory-typeItem-clicked");
     $("#type-new-text").removeClass("inventory-typeItem-clicked-text");
 
-   this.props.itemConditionSelection(this.state.wornDescriptionShow);
+   this.sendToParent(typeConditionState);
+  },
+
+  sendToParent: function(input) {
+    this.setState({ wornDescriptionShow: input }, function() {
+      this.props.itemConditionSelection(this.state.wornDescriptionShow);
+    });
   },
 
   render: function() {

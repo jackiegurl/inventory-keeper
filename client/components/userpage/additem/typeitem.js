@@ -5,12 +5,13 @@ var TypeItem = React.createClass({
 
   getInitialState: function() {
     return {
-      descriptionShow: "clothes"
+      descriptionShow: null
     }
   },
 
   setClothes: function() {
-    this.setState({ descriptionShow: "clothes" });
+    var itemType = "clothes";
+
     $("#type-clothes").addClass("inventory-typeItem-clicked");
     $("#type-clothes-text").addClass("inventory-typeItem-clicked-text");
 
@@ -20,11 +21,12 @@ var TypeItem = React.createClass({
     $("#type-shoes").removeClass("inventory-typeItem-clicked");
     $("#type-shoes-text").removeClass("inventory-typeItem-clicked-text");
 
-    this.props.itemTypeSelection("clothes");
+    this.sendToParent(itemType);
   },
 
   setAccessories: function() {
-    this.setState({ descriptionShow: "accessories" });
+    var itemType = "accessories";
+
     $("#type-accessories").addClass("inventory-typeItem-clicked");
     $("#type-accessories-text").addClass("inventory-typeItem-clicked-text");
 
@@ -34,11 +36,12 @@ var TypeItem = React.createClass({
     $("#type-shoes").removeClass("inventory-typeItem-clicked");
     $("#type-shoes-text").removeClass("inventory-typeItem-clicked-text");
 
-    this.props.itemTypeSelection("accessories");
+    this.sendToParent(itemType);
   },
 
   setShoes: function() {
-    this.setState({ descriptionShow: "shoes" });
+    var itemType = "shoes";
+
     $("#type-shoes").addClass("inventory-typeItem-clicked");
     $("#type-shoes-text").addClass("inventory-typeItem-clicked-text");
 
@@ -48,7 +51,13 @@ var TypeItem = React.createClass({
     $("#type-clothes").removeClass("inventory-typeItem-clicked");
     $("#type-clothes-text").removeClass("inventory-typeItem-clicked-text");
 
-    this.props.itemTypeSelection("shoes");
+    this.sendToParent(itemType);
+  },
+
+  sendToParent: function(input) {
+    this.setState({ descriptionShow: input }, function() {
+      this.props.itemTypeSelection(this.state.descriptionShow);
+    })
   },
 
   render: function() {

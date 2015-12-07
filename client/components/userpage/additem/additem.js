@@ -31,23 +31,27 @@ var AddItem = React.createClass({
   },
 
   submitItemInfo: function(event) {
-    this.state.brand = this.refs.itemBrand.value;
-    this.state.image = this.refs.itemImage.value;
-    this.state.headline = this.refs.itemHeadline.value;
-    this.state.description = this.refs.itemDescription.value;
-    this.state.color = this.refs.itemColor.value;
-    this.state.price = this.refs.itemPrice.value;
-
     this.setState({
-      brand: this.state.brand,
-      image: this.state.image,
-      headline: this.state.headline,
-      description: this.state.description,
-      color: this.state.color,
-      price: this.state.price
-    });
+      brand: this.refs.itemBrand.value,
+      image: this.refs.itemImage.value,
+      headline: this.refs.itemHeadline.value,
+      description: this.refs.itemDescription.value,
+      color: this.refs.itemColor.value,
+      condition: this.state.condition,
+      type: this.state.type,
+      price: this.refs.itemPrice.value
+    }, function() {
+      var itemDetails = {
+        brand: this.state.brand,
+        image: this.state.image,
+        headline: this.state.headline,
+        description: this.state.description,
+        color: this.state.color,
+        price: this.state.price
+      }
 
-    this.props.getSubmission(this.state);
+      this.props.getSubmission(itemDetails);
+    });
   },
 
   itemConditionSelection: function(conditionInput) {

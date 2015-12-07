@@ -9,7 +9,8 @@ var Userpage = React.createClass({
   getInitialState: function() {
     //there are true and false statements on each component so the page knows which one to render
     return {
-      pageKey: "closet"
+      pageKey: "closet",
+      items: []
     }
   },
 
@@ -32,16 +33,26 @@ var Userpage = React.createClass({
     this.setState({ pageKey: "addItem" });
   },
 
-  handleSubmission: function(input) {
-    console.log(input, "what is coming in submission");
+  componentWillMount: function() {
+    console.log(this.state.items, 'component did mount');
   },
-  
+
+  handleSubmission: function(input) {
+    this.setState({ items: this.state.items.concat([input]) }, function() {
+      console.log(this.state.items, 'should be array');
+    });
+  },
+
   render: function() {
+    var closetStructure = this.state.items.map(function(item,i) {
+      return <Closet data={item} key={i} />
+    });
+
     var pageRender;
 
     switch (this.state.pageKey) {
       case "closet":
-        pageRender = <Closet />;
+        pageRender = <Closet />
         break;
       case "addItem":
         pageRender = <AddItem getSubmission={this.handleSubmission} />;
