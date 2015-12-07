@@ -12,6 +12,17 @@ var ClosetHeader = React.createClass({
     }
   },
 
+  componentWillMount: function() {
+    var keyIndex = 0;
+
+    for(var key in this.state.items) {
+      this.state.items[key]['key'] = keyIndex;
+      keyIndex++; 
+    }
+
+    this.setState({ items: this.state.items });
+  },
+
   changeToTable: function() {
     this.setState({ viewStyle: "table" });
   },

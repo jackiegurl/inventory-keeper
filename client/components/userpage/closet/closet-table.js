@@ -11,8 +11,8 @@ var ClosetTable = React.createClass({
 
     return (
       <table className="table table-striped table-hover">
-        <tbody>
-          <tr>
+        <tbody className="table-font-size">
+          <tr className="tableItem-column-names">
             <th>SKU</th>
             <th>Type</th>
             <th>Brand</th>

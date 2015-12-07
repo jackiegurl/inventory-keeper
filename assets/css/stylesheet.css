@@ -34,7 +34,7 @@ ol {
 }
 
 table {
-  border: 1px solid #333;
+  border: 1px solid #ccc;
 }
 
 .homepage-background-content {
@@ -445,4 +445,14 @@ table {
 
 .padding-between {
   margin: 1%;
+}
+
+.table-font-size {
+  font-size: 0.9em;
+  letter-spacing: 0.4px;
+}
+
+.tableItem-column-names {
+  text-transform: uppercase;
+  font-weight: 600;
 }

@@ -4,11 +4,11 @@ var ReactDOM = require('react-dom');
 var TableItem = React.createClass({
 
   render: function() {
-    var tableItemImage = "url(" + this.props.data.image + ")"
+    var tableItemImage = "url(" + this.props.data.image + ")";
 
     return (
       <tr>
-        <td>{this.props.data.length}</td>
+        <td>{this.props.data.key}</td>
         <td>{this.props.data.type}</td>
         <td>{this.props.data.brand}</td>
         <td>{this.props.data.headline}</td>
