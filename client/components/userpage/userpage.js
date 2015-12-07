@@ -47,12 +47,13 @@ var Userpage = React.createClass({
   },
 
   handleSubmission: function(input) {
-    console.log(this.state.items, 'thisstate')
-    window.localStorage.setItem("inventory", JSON.stringify(this.state.items.concat([input])));
-    var setStorage = window.localStorage.getItem("inventory");
+    var originalStorage = window.localStorage.getItem("inventory");
+    var addItem = JSON.parse(originalStorage).concat([input]);
+
+    window.localStorage.setItem("inventory", JSON.stringify(addItem));
 
     this.setState({ 
-      items: JSON.parse(setStorage),
+      items: addItem,
       pageKey: "closet" 
     }, function() { 
       window.localStorage.setItem("inventory", JSON.stringify(this.state.items));
