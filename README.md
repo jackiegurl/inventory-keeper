@@ -1,7 +1,9 @@
 #Inventory Keeper
 
-`npm install
+````
+npm install
 grunt
-node server.js`
+node server.js
+````
 
 http://jackiewung-inventory.herokuapp.com
