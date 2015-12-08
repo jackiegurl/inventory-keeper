@@ -58,6 +58,7 @@ var Userpage = React.createClass({
   //the parent, userpage, so that it could contact it with the
   //current local storage inventory
   handleSubmission: function(input) {
+    var originalStorage = window.localStorage.getItem("inventory");
     var addItem = JSON.parse(originalStorage).concat([input]);
 
     window.localStorage.setItem("inventory", JSON.stringify(addItem));
