@@ -58,7 +58,7 @@
 	  //if the user does not have a token, render homepage
 	  getInitialState: function getInitialState() {
 	    return {
-	      hasToken: falseg
+	      hasToken: false
 	    };
 	  },
 
