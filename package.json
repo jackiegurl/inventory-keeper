@@ -15,6 +15,10 @@
   "bugs": {
     "url": "https://github.com/jackiewung/inventory-keeper/issues"
   },
+  "scripts": {
+    "postinstall": "grunt",
+    "start": "node server.js"
+  },
   "homepage": "https://github.com/jackiewung/inventory-keeper#readme",
   "dependencies": {
     "babel-core": "^5.8.25",
