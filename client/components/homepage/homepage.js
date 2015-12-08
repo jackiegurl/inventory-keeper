@@ -17,7 +17,7 @@ var Homepage = React.createClass({
 
   getNameCreateToken: function(input) {
     //store session 
-    window.localStorage.setItem('access_token', input);
+    window.localStorage.setItem("access_token", input);
     //bubbles up to the parent to tell it that a token has been created
     this.setState({ 
       tokenCreation: true,

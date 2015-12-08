@@ -16,9 +16,12 @@ var Main = React.createClass({
   },
 
   toggleLog: function() {
-    this.setState({
-      hasToken: !this.state.hasToken
-    })
+    var jwt = window.localStorage.getItem("access_token");
+    if(jwt) {
+      this.setState({ hasToken: true });
+    } else {
+      this.setState({ hasToken: false });
+    }
   },
 
   componentWillMount: function() {

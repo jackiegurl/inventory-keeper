@@ -420,6 +420,24 @@ table {
   display: block;
 }
 
+.closet-image-view-info .remove-x {
+  display: none;
+  color: #fff;
+}
+
+..closet-image-view-info:hover .remove-x {
+  display: block;
+}
+
+.closet-image-view-info .edit {
+  display: none;
+  color: #fff;
+}
+
+.closet-image-view-info:hover .edit {
+  display: block;
+}
+
 .closet-image-view-info .closet-image-view-info-text {
   display: none;
 }
@@ -431,13 +449,21 @@ table {
   display: block;
 }
 
+#submit-changes {
+  border:1px solid #fff;
+  margin: 5px;
+  background-color: rgba(255,255,255,0.2);
+  padding: 3px 5px 3px 5px;
+  display: inline-block;
+}
+
 .closet-image-view-info .closet-image-view-info-text:hover {
   display: block;
 }
 
 .closet-image-container {
   text-align: center;
-  padding-top: 18%;
+  padding-top: 10%;
 }
 
 .closet-image-text {
@@ -482,4 +508,17 @@ table {
   width: 140%;
   height: auto;
   border: 1px solid #999;
+}
+
+.edit-item {
+  background-color: transparent;
+  border: 1px solid #fff;
+}
+
+#icon-topright {
+  font-size: 0.8em;
+  top: 20px;
+  right: 20px;
+  float: right;
+  padding: 3px;
 }
