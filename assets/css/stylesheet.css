@@ -522,3 +522,12 @@ table {
   float: right;
   padding: 3px;
 }
+
+.table-i {
+  cursor: pointer;
+  padding: 5px;
+}
+
+.table-i:hover {
+  color: #666;
+}
