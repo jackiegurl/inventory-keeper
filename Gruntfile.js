@@ -18,7 +18,7 @@ module.exports = function(grunt) {
       webpackCheck: {
         entry: './client/components/main/main.js',
         output: {
-          filename: './client/bundle.js'
+          filename: './client/utils/bundle.js'
         },
         module: {
           loaders: [
