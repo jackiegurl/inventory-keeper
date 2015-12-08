@@ -6,14 +6,18 @@ var ClosetImage = React.createClass({
   getInitialState: function() {
     return {
       show: true,
-      data: this.props.data
+      data: this.props.data,
+      showItem: true
     }
   },
 
+  //toggles view for innventory button
   editInput: function() {
     this.setState({ show: !this.state.show });
   },
 
+  //makeChanges use the old value and the new value to check the local storage
+  //and see which index it should store the new changes
   makeChanges: function(event) {
     event.preventDefault();
     this.setState({ show: !this.state.show });
@@ -43,8 +47,26 @@ var ClosetImage = React.createClass({
     }
 
     window.localStorage.setItem("inventory", JSON.stringify(checkStorage));
-    var localStorageUpdate = window.localStorage.getItem("inventory")
-    this.setState({ data: updateData });
+    this.setState({ data: '', showItem: false });
+  },
+
+  removeInput: function() {
+    var checkStorage = JSON.parse(window.localStorage.getItem("inventory"));
+
+    for(var i = 0; i < checkStorage.length; i++) {
+      if(this.state.data.brand == checkStorage[i].brand
+        && this.state.data.color == checkStorage[i].color
+        && this.state.data.condition == checkStorage[i].condition
+        && this.state.data.headline == checkStorage[i].headline
+        && this.state.data.image == checkStorage[i].image
+        && this.state.data.price == checkStorage[i].price
+        && this.state.data.type == checkStorage[i].type) {
+        checkStorage.splice(i,1);
+      }
+    }
+
+    window.localStorage.setItem("inventory", JSON.stringify(checkStorage));
+    this.setState({ data: '', showItem: false });
   },
 
   render: function() {
@@ -56,10 +78,11 @@ var ClosetImage = React.createClass({
     };
 
     return (
-      <div className="closet-image-view-container">
+      <div>
+      {this.state.showItem ? <div className="closet-image-view-container">
         <div className="closet-image-view-boxsize" style={backgroundImage}>
           <div className="closet-image-view-info">
-              <div id="icon-topright" className="closet-image-text">
+              <div id="icon-topright" className="closet-image-text" onClick={this.removeInput}>
                 <i className="fa fa-times"></i>
               </div>
               <div id="icon-topright" className="closet-image-text" onClick={this.editInput}>
@@ -95,6 +118,7 @@ var ClosetImage = React.createClass({
             </span>
           </div>
         </div>
+      </div> : null }
       </div>
     )
   }
