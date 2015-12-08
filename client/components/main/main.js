@@ -9,7 +9,7 @@ var Main = React.createClass({
   //if the user does not have a token, render homepage
   getInitialState: function() {
     return {
-      hasToken: falseg
+      hasToken: false
     }
   },
 
