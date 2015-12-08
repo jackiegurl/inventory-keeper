@@ -47,7 +47,7 @@ var ClosetImage = React.createClass({
     }
 
     window.localStorage.setItem("inventory", JSON.stringify(checkStorage));
-    this.setState({ data: '', showItem: false });
+    this.setState({ data: updateData });
   },
 
   removeInput: function() {
