@@ -457,6 +457,16 @@ table {
   display: inline-block;
 }
 
+#submit-changes-t {
+  font-size: 0.7em;
+  color: #fff;
+  background-color: rba(0,0,0,0.3);
+  text-transform: uppercase;
+  padding: 2px 3px 3px 2px;
+  border: 1px solid #333;
+  display: inline-block;
+}
+
 .closet-image-view-info .closet-image-view-info-text:hover {
   display: block;
 }
@@ -513,6 +523,13 @@ table {
 .edit-item {
   background-color: transparent;
   border: 1px solid #fff;
+}
+
+.edit-item-t {
+  font-size: 0.8em;
+  background-color: rgba(0,0,0,0.3);
+  border: 1px solid #333;
+  width: 70%;
 }
 
 #icon-topright {
