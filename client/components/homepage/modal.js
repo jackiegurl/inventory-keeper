@@ -1,17 +1,16 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var fireBaseUtils = require('../../utils/helpers.js');
 
 var Modal = React.createClass({
   
+  //the modal is responsible for getting the username input
+  //after it has the username input, it sends it to the parent
+  //homepage, where it will create a token out of the username
+  //it also clears the submission after
   handleSubmit: function(e) {
     e.preventDefault();
-    //grabs the input value
     var userName = this.refs.inputName.value;
-    //sends username to firebase
-    fireBaseUtils.setUsername(userName);
     this.props.getUserName(userName);
-    //clears the input text on submission
     this.refs.inputName.value = '';
   },
 

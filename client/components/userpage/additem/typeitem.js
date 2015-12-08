@@ -3,12 +3,16 @@ var ReactDOM = require('react-dom');
 
 var TypeItem = React.createClass({
 
+  //initially sets the value to null so none is clicked at initial view
   getInitialState: function() {
     return {
       descriptionShow: null
     }
   },
 
+  //setClothes, setAccessories, setShoes aim to only highlight
+  //the one that is clicked and deslects the ones that have
+  //not been clicked, and sends the state to its parent additem
   setClothes: function() {
     var itemType = "Clothes";
 
@@ -60,6 +64,8 @@ var TypeItem = React.createClass({
     })
   },
 
+  //switch condition renders a description at the bottom
+  //depending on which one is clicked
   render: function() {
     var typeDescription;
     switch(this.state.descriptionShow) {

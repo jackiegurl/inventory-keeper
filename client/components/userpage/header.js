@@ -3,6 +3,8 @@ var ReactDOM = require('react-dom');
 
 var Userpage = React.createClass({
 
+  //the header on top of the user page listens on click functionality
+  //and passes it to its parent, userpage to tell it to call a function
   render: function() {
     return (
       <div className="homepage-header">

@@ -4,6 +4,8 @@ var TableItem = require('./closet-table-item');
 
 var ClosetTable = React.createClass({
 
+  //the render sets the column structure up and each data is then
+  //passed into TableItem, which will render each element as a row
   render: function() {
     var tableItemStructure = this.props.data.map(function(item, i) {
       return <TableItem data={item} key={i} />;

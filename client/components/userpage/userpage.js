@@ -9,9 +9,14 @@ var jwtName = window.localStorage.getItem('access_token');
 var Userpage = React.createClass({
 
 
+  //checks to see if inventory already exists in the local storage
+  //if it exists, then use it as reference to the inventory
+  //if not, then create the inventory with dummy data
+
+  //pageKey references to which page to render
   getInitialState: function() {
-    //there are true and false statements on each component so the page knows which one to render\
     var inventory = window.localStorage.getItem("inventory");
+
     if(!JSON.parse(inventory)) {
       window.localStorage.setItem("inventory", JSON.stringify(DummyData));
     } else if(JSON.parse(inventory)) {
@@ -24,30 +29,35 @@ var Userpage = React.createClass({
     }
   },
 
+  //switches on and off the view of additem and closet
   toggleStates: function() {
-    //switches on and off width add item and closet
     this.setState({ 
       goToCloset: !this.state.goToCloset, 
       goToAddItem: !this.state.goToCloset 
     });
   },
 
+  //is called by the child: header on logOut, removes the localStorage
+  //calls the parent "main" to render to the homepage
   removeToken: function() {
-    //removes the current token and redirects to homepage
     window.localStorage.clear();
     this.props.tokenRemoval();
   },
 
+  //tells it to render the closet view
   handleClosetOnClick: function() {
     this.setState({ pageKey: "closet" });
   },
 
+  //tells it to render the addItem view
   handleAddItemOnClick: function() {
     this.setState({ pageKey: "addItem" });
   },
 
+  //the child addItem collects submission data and sends it to
+  //the parent, userpage, so that it could contact it with the
+  //current local storage inventory
   handleSubmission: function(input) {
-    var originalStorage = window.localStorage.getItem("inventory");
     var addItem = JSON.parse(originalStorage).concat([input]);
 
     window.localStorage.setItem("inventory", JSON.stringify(addItem));
@@ -60,6 +70,7 @@ var Userpage = React.createClass({
     });
   },
 
+  //render uses a switch to determine which view to render
   render: function() {
     var pageRender;
 

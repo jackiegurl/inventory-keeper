@@ -3,12 +3,16 @@ var ReactDOM = require('react-dom');
 
 var TypeCondition = React.createClass({
 
+  //initially sets the value to null so none is clicked at initial view
   getInitialState: function() {
     return {
       wornDescriptionShow: null
     }
   },
 
+  //setNew, setLikeNew, setGentlyWorn aim to only highlight
+  //the one that is clicked and deslects the ones that have
+  //not been clicked, and sends the state to its parent additem
   setNew: function() {
     var typeConditionState = "New";
 

@@ -2,11 +2,12 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var TypeItem = require('./typeitem.js');
 var TypeCondition = require('./typecondition.js');
-var FireBaseUtils = require('../../../utils/helpers.js');
 var DummyData = require("../../../utils/dummydata.js");
 
 var AddItem = React.createClass({
 
+  //sets initial values to null so that it knows when a value 
+  //has not been inputted 
   getInitialState: function() {
     return {
       type: null,
@@ -19,18 +20,21 @@ var AddItem = React.createClass({
     }
   },
 
+  //if the input is less than 1, it shines a gray background
+  //to let the user know that it's not a proper input
   checkInput: function(event) {
     var eventValue = event.target.value;
     var eventId = event.target.id;
 
     if(eventValue.length < 1) {
-      $("#" + eventId).css({ "background-color": "#eee" });
+      $("#" + eventId).css({ "background-color": "#666" });
       $("#" + eventId).append()
     } else if (eventValue.length > 2) {
       $("#" + eventId).css({ "background-color": "transparent" });
     }
   },
 
+  //submits the item info to its parent, userpage
   submitItemInfo: function(event) {
     event.preventDefault();
 
@@ -57,16 +61,14 @@ var AddItem = React.createClass({
     });
   },
 
+  //condition & type, the children, sends the user which one
+  //has been clicked because they're in div elements
   itemConditionSelection: function(conditionInput) {
     this.setState({ condition: conditionInput });
   },
 
   itemTypeSelection: function(typeInput) {
     this.setState({ type: typeInput });
-  },
-
-  handleImageInput: function(input) {
-    console.log(input);
   },
 
   render: function() {

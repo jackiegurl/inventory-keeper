@@ -3,27 +3,34 @@ var ReactDOM = require('react-dom');
 var Modal = require('./modal.js')
 
 var Homepage = React.createClass({
+
+  //popUp is used to toggle on and off when the signup button is clicked
+  //tokenCreation is originally set to false but turns true as soon as a user signs up 
   getInitialState: function() {
     return {
       popUp: false,
       tokenCreation: false,
-      userName: null
     }
   },
 
+  //toggles view when signup button is clicked
   letsGetToken: function() {
     this.setState({ popUp: !this.state.popUp });
   },
 
+  //after the modal has been filled out by the user, it calls the parent
+  //on getNameCreateToken, where it will use the username to store the
+  //local storage access token
+  
+  //homepage will then bubble up to its parent "main", where it will
+  //tell its parent that there is a token
   getNameCreateToken: function(input) {
-    //store session 
     window.localStorage.setItem("access_token", input);
-    //bubbles up to the parent to tell it that a token has been created
+
     this.setState({ 
-      tokenCreation: true,
-      userName: input 
+      tokenCreation: true
     }, function() {
-      this.props.tokenCreated(this.state.tokenCreation, input);
+      this.props.tokenCreated();
     });
   },
 
@@ -35,7 +42,6 @@ var Homepage = React.createClass({
           <div className="homepage-header-content">
             <div className="tradesy-logo">Tradesy</div>
             <span className="homepage-header-right-links">
-              <a className="homepage-links">Login</a>
               <a id="homepage-links-signup" className="homepage-links" onClick={this.letsGetToken}>Sign Up</a>
             </span>
           </div>

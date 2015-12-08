@@ -3,6 +3,11 @@ var ReactDOM = require('react-dom');
 
 var TableItem = React.createClass({
 
+  //the parent passes each data in the .map and it stores
+  //it in as a state to have a truth value when editing and removing
+  //showItem starts off as true so that it can render its view, but
+  //it turns off when its deleted so that it renders empty
+  //showEdit toggles input text on and off when the edit icon is clicked
   getInitialState: function() {
     return {
       data: this.props.data,
@@ -11,10 +16,14 @@ var TableItem = React.createClass({
     }
   },
 
+  //toggles the input text view for editing when clicked
   editItem: function() {
     this.setState({ showEdit: !this.state.showEdit });
   },
 
+  //makeChanges use the old value and the new value to check the local storage
+  //and see which index it should store the new changes
+  //it then re-sets the data state so that it could immediately propagate
   makeChanges: function() {
     this.setState({ show: !this.state.show });
 
@@ -46,6 +55,9 @@ var TableItem = React.createClass({
     this.setState({ data: updateData, showEdit: true });
   },
 
+  //remove input looks into the storage, finds the old data that
+  //is stored inside, and removes it, and also changing showItem
+  //to false so that it renders empty
   removeItem: function() {
     var checkStorage = JSON.parse(window.localStorage.getItem("inventory"));
 
@@ -65,6 +77,8 @@ var TableItem = React.createClass({
     this.setState({ data: '', showItem: false });
   },
 
+  //tableImage uses the image property to put it into a string 
+  //so it could be put into an img tag
   render: function() {
     var tableItemImage = "" + this.props.data.image;
 
