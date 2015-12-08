@@ -450,6 +450,7 @@ table {
 }
 
 #submit-changes {
+  width: 42%;
   border:1px solid #fff;
   margin: 5px;
   background-color: rgba(255,255,255,0.2);
